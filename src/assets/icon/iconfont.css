@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2582444 */
+  src: url('iconfont.woff2?t=1622454276103') format('woff2'),
+       url('iconfont.woff?t=1622454276103') format('woff'),
+       url('iconfont.ttf?t=1622454276103') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-indent:before {
+  font-size: 28px;
+  content: "\ec06";
+  color: #fff;
+}
+

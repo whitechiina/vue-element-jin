@@ -7,3 +7,12 @@ html body {
     width: 100%;
     text-align: center;
 }
+
+
+.el-tag--plain .el-tag__close:hover {
+    background-color: red !important;
+}
+
+.el-tag--dark .el-tag__close:hover {
+    background-color: red !important;
+}

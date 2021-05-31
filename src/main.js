@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import * as axios from '@/api/config'
+import './assets/icon/iconfont.css'
 
 // 第三方库
 import ElementUI from 'element-ui'

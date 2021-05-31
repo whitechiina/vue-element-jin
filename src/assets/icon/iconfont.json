@@ -1,0 +1,16 @@
+{
+  "id": "2582444",
+  "name": "network",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "19729298",
+      "name": "收缩",
+      "font_class": "indent",
+      "unicode": "ec06",
+      "unicode_decimal": 60422
+    }
+  ]
+}

@@ -3,8 +3,8 @@
     <div class="title">
       <h1>澄城县煤炭管理局安全联网系统</h1>
     </div>
-    <div class="flex">
-      <el-button plain size="mini" icon="el-icon-share" @click="collapseMenu"></el-button>
+    <div class="flex" @click="collapseMenu">
+      <i class="iconfont icon-indent"></i>
     </div>
     <div>
       <el-breadcrumb separator="/">
@@ -37,6 +37,10 @@ export default {
 .header {
   display: flex;
   align-items: center;
+  .flex {
+    cursor: pointer;
+    margin-right: 20px;
+  }
 }
 h1 {
   color: #fff;

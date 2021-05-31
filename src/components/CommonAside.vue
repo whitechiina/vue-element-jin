@@ -9,7 +9,7 @@
     text-color="#ccc"
     active-text-color="#fff">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane label="安全监控" name="first">
+      <el-tab-pane :label="isCollage? '' : '安全监控'" name="first">
         <el-menu-item :index="item.path" v-for="item in noChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{item.label}}</span>
@@ -30,7 +30,12 @@
         </el-submenu>
       </el-tab-pane>
 
-      <el-tab-pane label="人员定位" name="second">213123</el-tab-pane>
+      <el-tab-pane :label="isCollage? '' : '人员定位'" name="second">
+        <el-menu-item :index="item.path" v-for="item in twoChildren" :key="item.path" @click="clickMenu(item)">
+          <i :class="'el-icon-' + item.icon"></i>
+          <span slot="title">{{item.label}}</span>
+        </el-menu-item>
+      </el-tab-pane>
     </el-tabs>
   </el-menu>
 </template>
@@ -101,6 +106,11 @@ export default {
     hasChildren() {
       return this.asideMenu.filter(item => item.children);
     },
+
+    // 第二个Tab路由
+    twoChildren() {
+      return this.asideMenu.filter(item => item.children);
+    },
     isCollage() {
       return this.$store.state.tab.isCollapse
     }
@@ -147,11 +157,11 @@ export default {
   color: #fff;
 }
 
-.el-tabs__item.is-active {
+.el-tabs__item .is-active {
   color: #fff;
 }
 
-.el-tabs__item.is-active {
+.el-tabs__item .is-active {
   border: 1px solid #fff;
 }
 
@@ -166,5 +176,9 @@ export default {
 
 .el-breadcrumb__item:last-child .el-breadcrumb__inner {
   color: #fff;
+}
+
+.el-menu-item.is-active {
+   background-color: #2299EE !important;//你要修改的颜色
 }
 </style>

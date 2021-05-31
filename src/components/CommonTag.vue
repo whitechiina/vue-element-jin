@@ -46,13 +46,10 @@ export default {
 
 <style lang="scss" scoped>
 .tags {
+  border-radius: none !important;
   margin-bottom: 20px;
 }
-.el-tag + .el-tag {
-  margin-left: 10px;
-}
 .button-new-tag {
-  margin-left: 10px;
   height: 32px;
   line-height: 30px;
   padding-top: 0;
@@ -60,7 +57,6 @@ export default {
 }
 .input-new-tag {
   width: 90px;
-  margin-left: 10px;
   vertical-align: bottom;
 }
 
@@ -73,5 +69,14 @@ export default {
 
 .el-tag {
   cursor: pointer;
+  border-radius: 0px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  padding: 0px 20px;
 }
+
+.el-tag--plain .el-tag__close:hover {
+  background-color: red !important;
+}
+
 </style>
