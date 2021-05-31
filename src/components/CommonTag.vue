@@ -75,8 +75,5 @@ export default {
   padding: 0px 20px;
 }
 
-.el-tag--plain .el-tag__close:hover {
-  background-color: red !important;
-}
 
 </style>

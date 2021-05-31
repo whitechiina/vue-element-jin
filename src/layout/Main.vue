@@ -9,7 +9,9 @@
       </el-aside>
       <el-main>
         <common-tag></common-tag>
-        <router-view></router-view>
+        <div class="main">
+          <router-view></router-view>
+        </div>
       </el-main>
     </el-container>
   </el-container>
@@ -39,5 +41,8 @@ export default {
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 240px;
     min-height: 400px;
+  }
+  .main {
+    padding: 0px 20px;
   }
 </style>

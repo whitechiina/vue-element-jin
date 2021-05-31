@@ -1,5 +1,6 @@
 <template>
     <div>
+       <LineTitle :title="title"></LineTitle>
        <vxe-toolbar ref="xToolbar1" custom>
           <template #buttons>
             <div class="header" style="display: flex; justify-content: space-between">
@@ -40,9 +41,11 @@
 </template>
 
 <script>
+import LineTitle from '@/components/LineTitle.vue'
 export default {
     data () {
         return {
+            title: '报表筛选',
             options: [{
             value: '选项1',
             label: '黄金糕'
@@ -94,6 +97,9 @@ export default {
             })
             console.log(customData)
         }
+    },
+    components: {
+        LineTitle
     }
 }
 </script>

@@ -93,6 +93,12 @@ export default {
               label: "报表筛选",
               name: 'page4', 
               icon: "setting"
+            },
+            {
+              path: "/page5",
+              label: "综合报表",
+              name: 'page5', 
+              icon: "setting"
             }
           ]
         }
@@ -180,5 +186,15 @@ export default {
 
 .el-menu-item.is-active {
    background-color: #2299EE !important;//你要修改的颜色
+}
+
+.el-menu-item {
+  height: 45px !important;
+  line-height: 45px !important;
+}
+
+.el-submenu__title {
+  height: 45px !important;
+  line-height: 45px !important;
 }
 </style>

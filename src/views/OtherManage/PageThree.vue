@@ -1,5 +1,6 @@
 <template>
   <div>
+    <LineTitle :title="title"></LineTitle>
     <div class="header">
       <div class="serach">
         <el-input v-model="input" placeholder="请输入内容"></el-input>
@@ -66,9 +67,11 @@
 </template>
 
 <script>
+import LineTitle from '@/components/LineTitle.vue'
 export default {
   data() {
     return {
+      title: "报表导出",
       input: "",
       submitLoading: false,
       tableData: [
@@ -362,6 +365,9 @@ export default {
         }
       }, 500);
     }
+  },
+  components: {
+    LineTitle
   }
 };
 

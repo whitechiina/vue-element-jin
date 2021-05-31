@@ -1,5 +1,6 @@
 <template>
   <div class="home-index-box">
+    <LineTitle :title="title"></LineTitle>
     <div class="header">
       <el-row :gutter="20">
         <el-col :span="4">
@@ -53,10 +54,12 @@
 </template>
 
 <script>
+import LineTitle from '@/components/LineTitle.vue'
 import LineCharst from "../../components/LineECharst.vue";
 export default {
   data() {
     return {
+      title: '历史曲线图',
       options0: [
         {
           value: "选项1",
@@ -152,7 +155,8 @@ export default {
     };
   },
   components: {
-    LineCharst
+    LineCharst,
+    LineTitle
   }
 };
 </script>

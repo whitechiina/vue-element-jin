@@ -1,5 +1,6 @@
 <template>
   <div>
+    <LineTitle :title="title"></LineTitle>
     <div class="header">
       <div class="date">
         <span>时间范围</span>
@@ -50,9 +51,11 @@
 </template>
 
 <script>
+import LineTitle from '@/components/LineTitle.vue'
 export default {
   data() {
     return {
+      title: '监控设备故障记录报表',
       tableData: [
         {
           id: 10001,
@@ -175,6 +178,9 @@ export default {
         }
       });
     }
+  },
+  components: {
+    LineTitle
   }
 };
 
@@ -231,6 +237,7 @@ const bottomHtml = `
 .header {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
   .date {
     span {
       margin-right: 10px;
