@@ -10,7 +10,12 @@
       <el-main>
         <common-tag></common-tag>
         <div class="main">
-          <router-view></router-view>
+          <transition  
+            mode="out-in"
+            enter-active-class="animate__animated animate__fadeIn"
+            leave-active-class="animate__animated animate__fadeOutRight">
+            <router-view></router-view>
+          </transition>
         </div>
       </el-main>
     </el-container>

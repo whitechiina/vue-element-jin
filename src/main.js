@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import * as axios from '@/api/config'
 import './assets/icon/iconfont.css'
-
+import animated from "animate.css";
 // 第三方库
 import ElementUI from 'element-ui'
 import VXETable from 'vxe-table'
@@ -18,6 +18,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
 Vue.use(VXETable)
+Vue.use(animated);
 VXETable.use(VXETablePluginExportXLSX)
 
 Vue.config.productionTip = false
