@@ -22,6 +22,16 @@ export default {
                 state.currentMenu = null
             }
         },
+        allTab(state) {
+            state.tabList = [
+                {
+                    path: "/",
+                    label: "首页",
+                    name: 'home',
+                    icon: "video-play"
+                },
+            ];
+        },
         closeTab(state, val) {
             let result = state.tabList.findIndex(item => item.name === val.name)
             state.tabList.splice(result, 1)
