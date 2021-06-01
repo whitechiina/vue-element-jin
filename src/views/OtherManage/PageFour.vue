@@ -1,26 +1,28 @@
 <template>
     <div>
        <LineTitle :title="title"></LineTitle>
-       <vxe-toolbar ref="xToolbar1" custom>
-          <template #buttons>
-            <div class="header" style="display: flex; justify-content: space-between">
-                <div class="search">
-                    <el-select v-model="value" placeholder="请选择">
-                    <el-option
-                        v-for="item in options"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value">
-                        </el-option>
-                    </el-select>
+        <div class="form">
+            <vxe-toolbar ref="xToolbar1" custom>
+            <template #buttons>
+                <div class="header" style="display: flex; justify-content: space-between">
+                    <div class="search">
+                        <el-select v-model="value" placeholder="请选择">
+                        <el-option
+                            v-for="item in options"
+                            :key="item.value"
+                            :label="item.label"
+                            :value="item.value">
+                            </el-option>
+                        </el-select>
+                    </div>
+                    <div class="export">
+                        <el-button type="primary" @click="exportDataEvent">导出</el-button>
+                        <el-button type="primary" @click="print">打印</el-button>
+                    </div>
                 </div>
-                <div class="export">
-                    <el-button type="primary" @click="exportDataEvent">导出</el-button>
-                    <el-button type="primary" @click="print">打印</el-button>
-                </div>
-            </div>
-          </template>
-        </vxe-toolbar>
+            </template>
+            </vxe-toolbar>
+        </div>
 
         <vxe-table
           border

@@ -1,7 +1,7 @@
 <template>
   <div>
     <LineTitle :title="title"></LineTitle>
-    <div class="header">
+    <div class="header form">
       <div class="date">
         <span>时间范围</span>
         <el-date-picker
@@ -237,7 +237,6 @@ const bottomHtml = `
 .header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
   .date {
     span {
       margin-right: 10px;

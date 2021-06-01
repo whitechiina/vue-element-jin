@@ -1,55 +1,45 @@
 <template>
   <div class="home-index-box">
     <LineTitle :title="title"></LineTitle>
-    <div class="header">
-      <el-row :gutter="20">
-        <el-col :span="4">
-          <el-select v-model="value0" placeholder="请选择数据类型">
-            <el-option
-              v-for="item in options0"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-col>
-        <el-col :span="4">
-          <el-select v-model="value1" placeholder="请选择数据类型">
-            <el-option
-              v-for="item in options1"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-col>
-        <el-col :span="4">
-          <el-select v-model="value2" placeholder="请选择数据类型">
-            <el-option
-              v-for="item in options2"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-col>
-        <el-col :span="4">
-          <el-select v-model="value3" placeholder="请选择数据类型">
-            <el-option
-              v-for="item in options3"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-            ></el-option>
-          </el-select>
-        </el-col>
-        <el-col :span="4">
-          <el-button type="primary">查看曲线图</el-button>
-        </el-col>
-      </el-row>
+    <div class="form">
+      <el-select v-model="value0" placeholder="请选择数据类型">
+        <el-option
+          v-for="item in options0"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        ></el-option>
+      </el-select>
+      <el-select v-model="value1" placeholder="请选择数据类型">
+        <el-option
+          v-for="item in options1"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        ></el-option>
+      </el-select>
+      <el-select v-model="value2" placeholder="请选择数据类型">
+        <el-option
+          v-for="item in options2"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        ></el-option>
+      </el-select>
+      <el-select v-model="value3" placeholder="请选择数据类型">
+        <el-option
+          v-for="item in options3"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        ></el-option>
+      </el-select>
+      <el-button type="primary">查看曲线图</el-button>
     </div>
     <!--折线趋势图-->
-    <LineCharst></LineCharst>
+    <div class="chart-container">
+      <LineCharst height="100%" width="100%"></LineCharst>
+    </div>
   </div>
 </template>
 
@@ -162,7 +152,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
-  margin-bottom: 20px;
+.chart-container {
+  position: relative;
+  width: auto;
+  height: calc(100vh - 280px);
 }
 </style>

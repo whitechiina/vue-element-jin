@@ -30,11 +30,26 @@
         </el-submenu>
       </el-tab-pane>
 
+
       <el-tab-pane :label="isCollage? '' : '人员定位'" name="second">
-        <el-menu-item :index="item.path" v-for="item in twoChildren" :key="item.path" @click="clickMenu(item)">
+        <el-menu-item :index="item.path" v-for="item in PeopleChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{item.label}}</span>
         </el-menu-item>
+        <el-submenu :index="item.path" v-for="(item, index) in hasPeopleChildren" :key="index">
+          <template slot="title">
+            <i class="el-icon-location"></i>
+            <span v-show="!isCollage">{{item.label}}</span>
+          </template>
+          <el-menu-item-group>
+            <el-menu-item
+              :index="subItem.path"
+              v-for="(subItem, subIndex) in item.children"
+              :key="subIndex"
+              @click="clickMenu(subItem)"
+            >{{subItem.label}}</el-menu-item>
+          </el-menu-item-group>
+        </el-submenu>
       </el-tab-pane>
     </el-tabs>
   </el-menu>
@@ -102,6 +117,154 @@ export default {
             }
           ]
         }
+      ],
+      asideMenuTwo: [
+        {
+          path: "/setting",
+          label: "人员定位",
+          name: 'setting',
+          icon: "user",
+          children: [
+            {
+              path: "/pageone",
+              label: "人员定位综合表格"
+            },
+            {
+              path: "/pagetwo",
+              label: "历史人员定位信息"
+            }
+          ]
+        }, 
+        {
+          path: "/setting2",
+          label: "橙合煤矿人员定位",
+          name: 'setting',
+          icon: "user",
+          children: [
+            {
+              path: "/pagethree",
+              label: "人员分布",
+              name: 'page1'
+            },
+            {
+              path: "/page2",
+              label: "今日上下井人员",
+              name: 'page2'
+            },
+            {
+              path: "/page3",
+              label: "当前井下人员",
+              name: 'page3'
+            },
+            {
+              path: "/page4",
+              label: "历史井下人员",
+              name: 'page4'
+            },
+            {
+              path: "/page5",
+              label: "当前站点人员",
+              name: 'page5'
+            },
+            {
+              path: "/page6",
+              label: "历史站点人员",
+              name: 'page6'
+            },
+            {
+              path: "/page7",
+              label: "当前区域人员",
+              name: 'page7'
+            },
+            {
+              path: "/page8",
+              label: "当前井下超时人员",
+              name: 'page8'
+            },
+            {
+              path: "/page9",
+              label: "当前人员位置",
+              name: 'page9'
+
+            },
+            {
+              path: "/page10",
+              label: "人员轨迹",
+              name: 'page10'
+
+            },
+            {
+              path: "/page11",
+              label: "人员信息",
+              name: 'page11'
+            }
+          ]
+        },
+        {
+          path: "/setting3",
+          label: "安里煤矿人员定位",
+          name: 'setting',
+          icon: "user",
+          children: [
+            {
+              path: "/pagethree",
+              label: "人员分布",
+              name: 'page1'
+            },
+            {
+              path: "/page2",
+              label: "今日上下井人员",
+              name: 'page2'
+            },
+            {
+              path: "/page3",
+              label: "当前井下人员",
+              name: 'page3'
+            },
+            {
+              path: "/page4",
+              label: "历史井下人员",
+              name: 'page4'
+            },
+            {
+              path: "/page5",
+              label: "当前站点人员",
+              name: 'page5'
+            },
+            {
+              path: "/page6",
+              label: "历史站点人员",
+              name: 'page6'
+            },
+            {
+              path: "/page7",
+              label: "当前区域人员",
+              name: 'page7'
+            },
+            {
+              path: "/page8",
+              label: "当前井下超时人员",
+              name: 'page8'
+            },
+            {
+              path: "/page9",
+              label: "当前人员位置",
+              name: 'page9'
+
+            },
+            {
+              path: "/page10",
+              label: "人员轨迹",
+              name: 'page10'
+
+            },
+            {
+              path: "/page11",
+              label: "人员信息",
+              name: 'page11'
+            }
+          ]
+        }
       ]
     };
   },
@@ -114,9 +277,14 @@ export default {
     },
 
     // 第二个Tab路由
-    twoChildren() {
-      return this.asideMenu.filter(item => item.children);
+    PeopleChildren() {
+      return this.asideMenuTwo.filter(item => !item.children);
     },
+    hasPeopleChildren() {
+      return this.asideMenuTwo.filter(item => item.children);
+    },
+
+    // 伸缩栏
     isCollage() {
       return this.$store.state.tab.isCollapse
     }

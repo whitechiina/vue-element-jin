@@ -1,7 +1,7 @@
 <template>
   <div>
     <LineTitle :title="title"></LineTitle>
-    <div class="header">
+    <div class="header1 form">
       <div class="serach">
         <el-input v-model="input" placeholder="请输入内容"></el-input>
         <el-button type="primary">查询</el-button>
@@ -420,10 +420,9 @@ const bottomHtml = `
 </script>
 
 <style lang="scss" scoped>
-.header {
+.header1 {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
   .serach {
     display: flex;
   }

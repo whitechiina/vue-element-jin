@@ -23,6 +23,7 @@ VXETable.use(VXETablePluginExportXLSX)
 Vue.config.productionTip = false
 
 Vue.prototype.$XModal = VXETable.modal
+Vue.prototype.$message = ElementUI.Message
 Vue.prototype.$axios = axios
 
 new Vue({

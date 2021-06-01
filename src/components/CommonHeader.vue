@@ -1,12 +1,13 @@
 <template>
   <div class="header">
-    <div class="title">
+    <div class="left">
+      <div class="title">
       <h1>澄城县煤炭管理局安全联网系统</h1>
     </div>
     <div class="flex" @click="collapseMenu">
       <i class="iconfont icon-indent"></i>
     </div>
-    <div>
+    <div class="tips">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item :to="current.path" v-if="current">
@@ -14,12 +15,24 @@
         </el-breadcrumb-item>
       </el-breadcrumb>
     </div>
+    </div>
+    <div class="tools">
+      <div class="full" @click="full">
+        <i class="iconfont icon-quanping"></i>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import screenfull from 'screenfull'
 import { mapState } from 'vuex'
 export default {
+  data () {
+    return {
+      isFullscreen: false
+    }
+  },
   computed: {
     ...mapState({
       current: state => state.tab.currentMenu
@@ -28,6 +41,16 @@ export default {
   methods: {
     collapseMenu() {
       this.$store.commit('collapseMenu')
+    },
+    full(){
+      if (!screenfull.isEnabled) {
+        this.$message({
+          message: '浏览器不支持全屏',
+          type: 'warning'
+        })
+        return false
+      }
+      screenfull.toggle()
     }
   }
 }
@@ -35,11 +58,23 @@ export default {
 
 <style lang="scss" scoped>
 .header {
+  width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  .left {
+    display: flex;
+    align-items: center;
+  }
   .flex {
     cursor: pointer;
     margin-right: 20px;
+  }
+  .tools {
+    float: right;
+    .full {
+      cursor: pointer;
+    }
   }
 }
 h1 {

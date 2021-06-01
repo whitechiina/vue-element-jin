@@ -1,6 +1,7 @@
 // 标题线组件
 <template>
     <div class="header">
+        <i></i>
         <h1>{{title}}</h1>
     </div>
 </template>
@@ -22,6 +23,14 @@ export default {
         height: 52px;
         line-height: 52px;
         background-color: #F2F2F2;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        i {
+            width: 10px;
+            height: 100%;
+            background-color: #0066cc;
+        }
         h1 {
             font-size: 16px;
             font-weight: 400;
