@@ -101,6 +101,8 @@ export default {
   border-radius: none !important;
   margin-bottom: 20px;
   position: relative;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #d8dce5;
   .tag-item {
     display: inline-block;
     width: 100%;

@@ -13,7 +13,7 @@ html body {
 }
 
 .el-main{
-    padding: 20px 0px !important;
+    padding: 6px 0px !important;
 }
 
 .el-tag--plain .el-tag__close:hover {
@@ -24,3 +24,9 @@ html body {
     background-color: red !important;
 }
 
+
+
+// 进度条
+#nprogress .bar {
+    background-color: #fff;
+}
