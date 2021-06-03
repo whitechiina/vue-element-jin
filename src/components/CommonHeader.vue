@@ -20,17 +20,44 @@
       <div class="full" @click="full">
         <i class="iconfont icon-quanping"></i>
       </div>
+      <div class="login">
+        <div class="username">管理员</div>
+        <el-dropdown @command="handleCommand">
+          <span class="el-dropdown-link">
+            比克大魔王<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item command="info">基本资料</el-dropdown-item>
+            <el-dropdown-item command="password">修改密码</el-dropdown-item>
+            <el-dropdown-item command="logout">退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+        <div class="userpic">
+          <img src="https://nirongxu.github.io/vue-xuAdmin/dist/static/images/icon.jpg">
+        </div>
+      </div>
     </div>
+    
+    <!-- 编辑组件 -->
+    <UserInfo v-if="userInfoLog" :dialogVisible="userInfoLog" :title="title" @userinfoCallback="userinfoCallback"></UserInfo>
+    <EditPassword v-if="passwordLog" :dialogVisible="passwordLog" :title="title" @passwordCallback="passwordCallback"></EditPassword>
   </div>
 </template>
 
 <script>
+import Cookies from "js-cookie"
 import screenfull from 'screenfull'
 import { mapState } from 'vuex'
+import UserInfo from "@/components/userForm/userInfo"
+import EditPassword from "@/components/userForm/userPassword"
 export default {
+  components: { UserInfo, EditPassword },
   data () {
     return {
-      isFullscreen: false
+      isFullscreen: false,
+      userInfoLog: false,
+      passwordLog: false,
+      title: ''
     }
   },
   computed: {
@@ -42,6 +69,12 @@ export default {
     collapseMenu() {
       this.$store.commit('collapseMenu')
     },
+    userinfoCallback () {
+      this.userInfoLog = false
+    },
+    passwordCallback () {
+      this.passwordLog = false
+    },
     full(){
       if (!screenfull.isEnabled) {
         this.$message({
@@ -51,6 +84,22 @@ export default {
         return false
       }
       screenfull.toggle()
+    },
+    handleCommand(command) {
+      switch (command) {
+        case 'info':
+          this.title = '编辑资料'
+          this.userInfoLog = true
+          break;
+        case 'password':
+          this.title = '修改密码'
+          this.passwordLog = true
+          break;
+        case 'logout':
+          Cookies.remove("token")
+          location.reload()  //强制刷新页面
+          break;
+      }
     }
   }
 }
@@ -71,9 +120,28 @@ export default {
     margin-right: 20px;
   }
   .tools {
-    float: right;
+    display: flex;
+    align-items: center;
     .full {
       cursor: pointer;
+      padding-right: 10px;
+    }
+    .login {
+      display: flex;
+      align-items: center;
+      .username {
+        font-size: 14px;
+        color: #fff;
+      }
+      .userpic {
+        width: 40px;
+        height: 40px;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+        }
+      }
     }
   }
 }
