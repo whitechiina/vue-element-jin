@@ -23,6 +23,9 @@ const store = new Vuex.Store({
       })
     }
   },
+  getters: {
+    token: state => state.token,
+  },
   modules: {
     tab
   }

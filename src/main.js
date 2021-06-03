@@ -5,6 +5,7 @@ import store from './store'
 import './assets/icon/iconfont.css'
 import animated from "animate.css";
 import '@/api/config'  //网络请求
+import "@/router/permission"  //路由守卫
 
 // 第三方库
 import ElementUI from 'element-ui'
