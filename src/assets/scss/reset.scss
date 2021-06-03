@@ -30,8 +30,21 @@ html body {
     color: #fff !important;
 }
 
+.el-tag--dark {
+    background-color: #0066CC !important;
+}
 
+.el-tag--plain {
+    color: #0066CC !important;
+    border-color: none !important;
+}
 // 进度条
 #nprogress .bar {
     background-color: #fff;
+}
+
+
+// 表格
+.vxe-table {
+    z-index: -1;
 }

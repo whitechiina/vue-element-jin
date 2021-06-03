@@ -19,6 +19,7 @@
         </div>
       </el-main>
     </el-container>
+    <right-panel></right-panel>
   </el-container>
 </template>
 
@@ -26,11 +27,13 @@
 import CommonAside from '../components/CommonAside.vue'
 import CommonHeader from '../components/CommonHeader.vue'
 import CommonTag from '../components/CommonTag.vue'
+import RightPanel from '../components/rightPanel/index.vue'
 export default {
     components: {
         CommonAside,
         CommonHeader,
-        CommonTag
+        CommonTag,
+        RightPanel
     }
 }
 </script>

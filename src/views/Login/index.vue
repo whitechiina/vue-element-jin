@@ -130,7 +130,7 @@ export default {
 
     .loginBox {
       .iconcolor {
-        color: #409EFF;
+        color: #0066CC;
       }
 
       padding: 74px 0 118px;

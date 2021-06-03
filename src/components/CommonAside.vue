@@ -353,7 +353,7 @@ export default {
 }
 
 .el-menu-item.is-active {
-   background-color: #2299EE !important;//你要修改的颜色
+   background-color: #0066cc !important;//你要修改的颜色
 }
 
 .el-menu-item {
