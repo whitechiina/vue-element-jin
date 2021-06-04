@@ -1,26 +1,31 @@
 <template>
     <div class="wrap">
         <div class="title">
-            <h4>顶部主题</h4>
+            <h4>侧栏收缩</h4>
         </div>
         <div class="flex">
-            <el-color-picker v-model="color1" @change="themeChange"></el-color-picker>
+            <el-switch
+                v-model="flag"
+                active-color="#13ce66"
+                inactive-color="#ff4949"
+                @change="isCollage">
+            </el-switch>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    data () {
-        return {
-            color1: '#0066CC',
-        }
-    },
     methods: {
-        themeChange() {
-            this.$store.commit('setColor',this.color1)
+        isCollage() {
+            this.$store.commit('collapseMenu')
         }
     },
+    computed: {
+        flag() {
+            return this.$store.state.tab.isCollapse
+        }
+    }
 }
 </script>
 

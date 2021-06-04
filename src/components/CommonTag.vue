@@ -1,5 +1,5 @@
 <template>
-  <div class="tags">
+  <div class="tags" v-if="!tagflag">
     <el-tag
       :key="tag.name"
       size="small"
@@ -35,7 +35,8 @@ export default {
   },
   computed: {
     ...mapState({
-        tags: state => state.tab.tabList
+        tags: state => state.tab.tabList,
+        tagflag: state => state.tab.tagFlag
     })
   },
   watch: {

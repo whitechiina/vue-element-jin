@@ -1,8 +1,6 @@
 <template>
   <div id="login">
     <div class="loginConbox">
-      <div class="header">
-      </div>
       <div class="loginBox">
         <div class="loginCon">
           <div class="title">
@@ -30,8 +28,7 @@
                 </el-form-item>
                 <p class="smalltxt">
                   <router-link class="a" to="#">忘记密码</router-link>
-                  <router-link class="a" to="#">忘记会员名</router-link>
-                  <router-link class="a" to="#">免费注册</router-link>
+                  <router-link class="a" to="#">注册账号</router-link>
                 </p>
               </el-form>
             </el-card>
@@ -48,7 +45,7 @@ export default {
       color: 'red',
       smdl: true,
       loginForm: {
-        username: "vue-xuadmin",
+        username: "vue-jinadmin",
         password: "123456"
       }
     }
@@ -107,24 +104,21 @@ export default {
 <style lang="scss">
   #login {
     width: 100%;
-    height: 100%;
-    background-color: #2d3a4b;
+    height: 100vh;
+    background-image: url('../../assets/images/bg.jpg');
+    background-size: cover;
+    background-position: center left;
+    z-index: 9999;
     .loginConbox{
-      background: #2d3a4b;
     }
-    .header {
-      height: 60px;
-      position: relative;
-      background: #2d3a4b;
-      .logo{
-        margin-left: 30px;
-        width: 500px;
-        float: left;
-        height: 40px;
-        padding-top: 10px;
-        img{
-          height: 100%;
-        }
+    .logo{
+      margin-left: 30px;
+      width: 500px;
+      float: left;
+      height: 40px;
+      padding-top: 10px;
+      img{
+        height: 100%;
       }
     }
 

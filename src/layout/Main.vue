@@ -1,6 +1,6 @@
 <template>
   <el-container style="height: 100%">
-    <el-header :style="{background: color}">
+    <el-header :style="{background: color? color : '#0066CC'}">
       <common-header></common-header>
     </el-header>
     <el-container>
@@ -48,6 +48,7 @@ export default {
 <style lang="scss" scoped>
   .el-header {
     height: 56px !important;
+    padding: 0px 0px !important;
   }
 </style>
 

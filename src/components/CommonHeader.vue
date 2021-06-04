@@ -1,20 +1,23 @@
 <template>
   <div class="header">
     <div class="left">
-      <div class="title">
-      <h1>{{projectitle}}</h1>
-    </div>
-    <div class="flex" @click="collapseMenu">
-      <i class="iconfont icon-indent"></i>
-    </div>
-    <div class="tips">
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item :to="current.path" v-if="current">
-          {{current.label}}
-        </el-breadcrumb-item>
-      </el-breadcrumb>
-    </div>
+      <div class="title" v-show="!isCollapse">
+        <h1>{{projectitle}}</h1>
+      </div>
+      <div class="picture" v-show="isCollapse">
+        <img src="https://nirongxu.github.io/vue-xuAdmin/dist/static/images/icon.jpg">
+      </div>
+      <div class="flex" @click="collapseMenu">
+        <i class="iconfont icon-indent"></i>
+      </div>
+      <div class="tips">
+        <el-breadcrumb separator="/">
+          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item :to="current.path" v-if="current">
+            {{current.label}}
+          </el-breadcrumb-item>
+        </el-breadcrumb>
+      </div>
     </div>
     <div class="tools">
       <div class="full" @click="full">
@@ -63,6 +66,7 @@ export default {
   computed: {
     ...mapState({
       current: state => state.tab.currentMenu,
+      isCollapse: state => state.tab.isCollapse,
       projectitle: state => state.projectitle
     })
   },
@@ -108,13 +112,25 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  width: 100%;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0px 20px 0px 0px;
   .left {
     display: flex;
     align-items: center;
+  }
+  .title {
+    width: 240px;
+  }
+  .picture {
+    width: 64px;
+    height: 56px;
+    img { 
+      width: 64px;
+      height: 56px;
+    }
   }
   .flex {
     cursor: pointer;
@@ -149,9 +165,11 @@ export default {
 h1 {
   color: #fff;
   font-size: 18px;
-  width: 260px;
+  width: 240px;
   transition: background-color ease 0.3s;
   font-weight: 500;
+  padding: 0px 10px;
+  box-sizing: border-box;
 }
 
 </style>

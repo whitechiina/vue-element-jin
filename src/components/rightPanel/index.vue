@@ -11,6 +11,8 @@
             <div class="custom-setting-item" v-show="show">
                 <CustomTitle></CustomTitle>
                 <CustomColor></CustomColor>
+                <CustomAside></CustomAside>
+                <CustomTag></CustomTag>
             </div>
         </div>
     </div>
@@ -19,6 +21,8 @@
 <script>
 import CustomTitle from './components/CustomTilt.vue'
 import CustomColor from './components/CustomColor.vue'
+import CustomAside from './components/CustomAside.vue'
+import CustomTag from './components/CustomTag.vue'
 export default {
     data () {
         return {
@@ -32,7 +36,9 @@ export default {
     },
     components: {
         CustomTitle,
-        CustomColor
+        CustomColor,
+        CustomAside,
+        CustomTag
     }
 }
 </script>

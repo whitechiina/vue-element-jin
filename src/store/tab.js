@@ -3,6 +3,7 @@ export default {
         menu: [],
         currentMenu: null,
         isCollapse: false,  //伸缩条
+        tagFlag: false,  //标签卡
         tabList: [
             {
                 path: "/",
@@ -38,7 +39,11 @@ export default {
         },
         collapseMenu(state) {
             state.isCollapse = !state.isCollapse
-        }
+        },
+        tagFlag(state) {
+            state.tagFlag = !state.tagFlag
+        },
+        
     },
     actions: {
 
