@@ -1,5 +1,8 @@
 <template>
-    <div class="panel-shade" :class="show? 'shade':''">
+    <div class="panel-shade">
+        <!-- 遮罩 -->
+        <div class="shade" v-show="show" :class="show? 'shade':''"></div>
+        <!-- 面板 -->
         <div class="panel-setting" :class="show ? 'havewidth':'nowidth'">
             <div class="btn-flex" @click="showClick">
                 <i v-show="show" class="iconfont icon-guanbi"></i>
@@ -42,11 +45,17 @@ export default {
 </style>
 <style lang="scss" scoped>
         .panel-shade {
-            position: fixed;
+            position: relative;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100vh;
+            z-index: 999;
+            .shade {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+            }
             .havewidth {
                 width: 100%;
                 max-width: 280px;

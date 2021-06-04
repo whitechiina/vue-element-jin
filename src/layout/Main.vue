@@ -1,6 +1,6 @@
 <template>
   <el-container style="height: 100%">
-    <el-header>
+    <el-header :style="{background: color}">
       <common-header></common-header>
     </el-header>
     <el-container>
@@ -28,20 +28,26 @@ import CommonAside from '../components/CommonAside.vue'
 import CommonHeader from '../components/CommonHeader.vue'
 import CommonTag from '../components/CommonTag.vue'
 import RightPanel from '../components/rightPanel/index.vue'
+
+import { mapState } from 'vuex'
 export default {
-    components: {
-        CommonAside,
-        CommonHeader,
-        CommonTag,
-        RightPanel
-    }
+  components: {
+      CommonAside,
+      CommonHeader,
+      CommonTag,
+      RightPanel
+  },
+  computed: {
+    ...mapState({
+      color: state => state.color.color
+    })
+  },
 }
 </script>
 
 <style lang="scss" scoped>
   .el-header {
     height: 56px !important;
-    background-color: #0066CC;
   }
 </style>
 

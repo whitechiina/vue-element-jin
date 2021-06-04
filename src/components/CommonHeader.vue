@@ -2,7 +2,7 @@
   <div class="header">
     <div class="left">
       <div class="title">
-      <h1>澄城县煤炭管理局安全联网系统</h1>
+      <h1>{{projectitle}}</h1>
     </div>
     <div class="flex" @click="collapseMenu">
       <i class="iconfont icon-indent"></i>
@@ -62,7 +62,8 @@ export default {
   },
   computed: {
     ...mapState({
-      current: state => state.tab.currentMenu
+      current: state => state.tab.currentMenu,
+      projectitle: state => state.projectitle
     })
   },
   methods: {

@@ -3,18 +3,26 @@
         <h4>自定义项目title名</h4>
         <div class="flex">
             <el-input v-model="input" placeholder="请输入项目名称"></el-input>
-            <el-button type=primary>确定</el-button>
+            <el-button type=primary @click="sureSave">确定</el-button>
         </div>
     </div>
 </template>
 
 <script>
+import Cookies from "js-cookie"
 export default {
     data () {
         return {
             input: ''
         }
-    }
+    },
+    methods: {
+        sureSave() {
+            Cookies.remove("Title")
+            Cookies.set("Title", this.input)
+            this.$store.commit('editTitlr', this.input)
+        }
+    },
 }
 </script>
 

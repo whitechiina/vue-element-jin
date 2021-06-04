@@ -4,7 +4,7 @@
             <h4>主题色</h4>
         </div>
         <div class="flex">
-            <el-color-picker v-model="color1"></el-color-picker>
+            <el-color-picker v-model="color1" @change="themeChange"></el-color-picker>
         </div>
     </div>
 </template>
@@ -15,7 +15,12 @@ export default {
         return {
             color1: '#0066CC',
         }
-    }
+    },
+    methods: {
+        themeChange() {
+            this.$store.commit('setColor',this.color1)
+        }
+    },
 }
 </script>
 
@@ -25,7 +30,6 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 20px;
         .flex {
             display: flex;
             align-items: center;
