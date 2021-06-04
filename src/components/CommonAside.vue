@@ -357,12 +357,12 @@ export default {
 }
 
 .el-menu-item {
-  height: 45px !important;
-  line-height: 45px !important;
+  height: 55px !important;
+  line-height: 55px !important;
 }
 
 .el-submenu__title {
-  height: 45px !important;
-  line-height: 45px !important;
+  height: 55px !important;
+  line-height: 55px !important;
 }
 </style>

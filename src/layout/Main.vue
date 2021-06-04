@@ -4,10 +4,10 @@
       <common-header></common-header>
     </el-header>
     <el-container>
-      <el-aside width="auto">
+      <el-aside width="auto" :style="{ height: height + 'px' }">
         <common-aside></common-aside>
       </el-aside>
-      <el-main>
+      <el-main class="content" :style="{ height: height + 'px' }">
         <common-tag></common-tag>
         <div class="main">
           <transition  
@@ -40,8 +40,13 @@ export default {
   computed: {
     ...mapState({
       color: state => state.color.color
-    })
-  },
+    }),
+    // 计算高度
+    height() {
+      const ViewHeight = window.innerHeight - 56;
+      return ViewHeight;
+    }
+  }
 }
 </script>
 
@@ -49,6 +54,10 @@ export default {
   .el-header {
     height: 56px !important;
     padding: 0px 0px !important;
+  }
+
+  .content {
+    overflow: scroll;
   }
 </style>
 

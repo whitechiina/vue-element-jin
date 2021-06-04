@@ -130,6 +130,7 @@ export default {
       width: 100%;
       max-width: 240px;
       transition: all .25s;
+      padding-left: 6px;
     }
     .nowidth {
       width: 64px;

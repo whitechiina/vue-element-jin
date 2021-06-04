@@ -106,7 +106,6 @@ export default {
   padding-left: 8px;
   border-bottom: 1px solid #d8dce5;
   .tag-item {
-    display: inline-block;
     width: 100%;
     height: 40px;
   }
@@ -134,7 +133,8 @@ export default {
   border-radius: 0px !important;
   height: 40px !important;
   line-height: 40px !important;
-  padding: 0px 30px;
+  padding: 0px 20px;
+  margin-right: 10px;
 }
 
 // 右键样式
