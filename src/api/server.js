@@ -1,10 +1,9 @@
 import axios from '@/api/config'
 
 // 获取数据
-export function getHomeApi(data) {
+export function getHomeApi() {
     return axios('UnsafeTypes', {
-        method: 'GET',
-        params: data
+        method: 'GET'
     })
 }
 

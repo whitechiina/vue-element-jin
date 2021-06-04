@@ -103,6 +103,7 @@ export default {
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 8px;
+  padding-left: 8px;
   border-bottom: 1px solid #d8dce5;
   .tag-item {
     display: inline-block;

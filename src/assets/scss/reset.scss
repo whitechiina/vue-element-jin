@@ -36,7 +36,11 @@ html body {
 
 .el-tag--plain {
     color: #0066CC !important;
-    border-color: none !important;
+    border-color: #0066CC !important;
+}
+
+.el-tag--dark {
+    border-color: #0066CC !important;
 }
 // 进度条
 #nprogress .bar {

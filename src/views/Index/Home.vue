@@ -6,16 +6,22 @@
     <button @click="shanchuData()">put</button>
 
     <button @click="updata()">上传文件参数明细</button>
+    {{message}}
   </div>
 </template>
 
 <script>
 import { getHomeApi, AbnormalCheckingIns, deleteCamera, shanchuData, updata } from '@/api/server'
 export default {
+  data () {
+    return {
+      message: ""
+    }
+  },
   methods: {
     async getHomeApi() {
       const data = await getHomeApi()
-      console.log(data)
+      this.message = data
     },
     async AbnormalCheckingIns() {
         await AbnormalCheckingIns({ cameraId: 123 })
