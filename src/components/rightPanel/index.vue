@@ -47,6 +47,7 @@ export default {
 <style>
     .shade {
         background-color: rgba(0,0,0,.2);
+        backdrop-filter: blur(5px);
     }
 </style>
 <style lang="scss" scoped>

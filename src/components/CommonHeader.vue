@@ -1,11 +1,13 @@
 <template>
   <div class="header">
     <div class="left">
-      <div class="title" v-show="!isCollapse">
+      <div :class="!isCollapse? 'havewidth':'nowidth'">
+        <div class="title" v-show="!isCollapse">
         <h1>{{projectitle}}</h1>
-      </div>
-      <div class="picture" v-show="isCollapse">
-        <img src="https://nirongxu.github.io/vue-xuAdmin/dist/static/images/icon.jpg">
+        </div>
+        <div class="picture" v-show="isCollapse">
+          <img src="https://nirongxu.github.io/vue-xuAdmin/dist/static/images/icon.jpg">
+        </div>
       </div>
       <div class="flex" @click="collapseMenu">
         <i class="iconfont icon-indent"></i>
@@ -120,6 +122,17 @@ export default {
   .left {
     display: flex;
     align-items: center;
+    justify-content: center;
+    .havewidth {
+      width: 100%;
+      max-width: 240px;
+      transition: all .25s;
+    }
+    .nowidth {
+      width: 64px;
+      max-width: 64px;
+      transition: all .25s;
+    }
   }
   .title {
     width: 240px;
@@ -134,7 +147,11 @@ export default {
   }
   .flex {
     cursor: pointer;
-    margin-right: 20px;
+    margin: 0px 20px;
+  }
+  .tips {
+    width: 300px;
+    height: 100%;
   }
   .tools {
     display: flex;
