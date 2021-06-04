@@ -94,6 +94,14 @@ const routes = [{
         }
       },
     ]
+  },
+  {
+    path: "/404",
+    name: "notFound",
+    component: () => import('@/views/404/index.vue'),
+  }, {
+    path: "*", // 此处需特别注意置于最底部
+    redirect: "/404"
   }
 ]
 

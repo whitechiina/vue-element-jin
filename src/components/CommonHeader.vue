@@ -155,6 +155,7 @@ export default {
   .tips {
     width: 300px;
     height: 100%;
+    padding-left: 20px;
   }
   .tools {
     display: flex;
