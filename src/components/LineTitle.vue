@@ -23,7 +23,7 @@ export default {
         height: 52px;
         line-height: 52px;
         background-color: #F2F2F2;
-        margin-bottom: 20px;
+        margin: 0px 0px 20px 0px;
         display: flex;
         align-items: center;
         i {

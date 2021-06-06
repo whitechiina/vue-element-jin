@@ -1,42 +1,101 @@
 <template>
   <div>
-    <button @click="getHomeApi()">get</button>
-    <button @click="AbnormalCheckingIns()">post</button>
-    <button @click="deleteCamera()">delect</button>
-    <button @click="shanchuData()">put</button>
+    <!-- 头部 -->
+    <div class="header">
+      <el-row :gutter="20">
+        <el-col :span="6" v-for="(item, index) in data" :key="index">
+          <div class="main">
+            <div class="image">
+              <img :src="item.img">
+            </div>
+            <div class="content">
+              <div class="title"><h5>{{item.title}}</h5></div>
+              <div class="txt">{{item.text}}</div>
+            </div>
+          </div>
+        </el-col>
+      </el-row>
+    </div>
+    
 
-    <button @click="updata()">上传文件参数明细</button>
-    {{message}}
+    <!-- 折线图 -->
+    <div class="line">
+      <line-echarts id="lineEcharts" height="300px" ref="echarts"></line-echarts>
+    </div>
   </div>
 </template>
 
 <script>
-import { getHomeApi, AbnormalCheckingIns, deleteCamera, shanchuData, updata } from '@/api/server'
-export default {
-  data () {
-    return {
-      message: ""
-    }
-  },
-  methods: {
-    async getHomeApi() {
-      const data = await getHomeApi()
-      this.message = data
-    },
-    async AbnormalCheckingIns() {
-        await AbnormalCheckingIns({ cameraId: 123 })
-    },
-    async deleteCamera() {
-        await deleteCamera({ data: 123 })
-    },
-    async shanchuData() {
-        await shanchuData({ data: 123 })
-    },
+import LineEcharts from "./components/LineEcharst.vue"
 
-    async updata() {
-      const data = await updata(123, '靳耀伟')
-      console.log(data)
+export default {
+  components: {
+    LineEcharts
+  },
+  data() {
+    return {
+      data: [{
+        img: 'https://img1.baidu.com/it/u=2496571732,442429806&fm=26&fmt=auto&gp=0.jpg',
+        title: '标题1',
+        text: '这是内推展示'
+      },{
+        img: 'https://img1.baidu.com/it/u=2496571732,442429806&fm=26&fmt=auto&gp=0.jpg',
+        title: '标题2',
+        text: '这是内推展示'
+      },{
+        img: 'https://img1.baidu.com/it/u=2496571732,442429806&fm=26&fmt=auto&gp=0.jpg',
+        title: '标题3',
+        text: '这是内推展示'
+      },{
+        img: 'https://img1.baidu.com/it/u=2496571732,442429806&fm=26&fmt=auto&gp=0.jpg',
+        title: '标题4',
+        text: '这是内推展示'
+      }]
     }
   },
 }
 </script>
+
+<style lang="scss" scoped>
+  .header {
+    margin-bottom: 20px;
+    .main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border: 1px solid #d8dce5;
+      box-shadow: 4px 4px 40px rgba(0, 0, 0, .1);
+      padding: 10px;
+      background-color: #fff;
+      .image {
+        width: 80px;
+        height: 80px;
+        img {
+          width: 80px;
+          height: 80px;
+        }
+      }
+      .content {
+        padding-left: 20px;
+        .title {
+          font-size: 26px;
+          color: rgba(0,0,0,.45);
+          h5 {
+            margin: 0 auto;
+            color: #666;
+          }
+        }
+        .txt {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+
+  .line {
+    border: 1px solid #d8dce5;
+    padding: 10px;
+    background-color: white;
+  }
+</style>

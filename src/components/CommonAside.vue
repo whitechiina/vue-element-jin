@@ -68,6 +68,12 @@ export default {
           icon: "s-home"
         },
         {
+          path: "/server",
+          label: "网络请求",
+          name: 'server',
+          icon: "video-play"
+        },
+        {
           path: "/video",
           label: "视频管理",
           name: 'video',

@@ -29,11 +29,19 @@ const routes = [{
         }
       },
       {
+        path: '/server',
+        name: 'server',
+        component: () => import('@/views/ServerApi/index.vue'),
+        meta: {
+          index: 2
+        }
+      },
+      {
         path: '/hometwo',
         name: 'hometwo',
         component: () => import('@/views/HomeTwo/HomeTwo.vue'),
         meta: {
-          index: 2
+          index: 3
         }
       },
       {
@@ -41,16 +49,15 @@ const routes = [{
         name: 'video',
         component: () => import('@/views/VideoManage/video.vue'),
         meta: {
-          index: 3
+          index: 4
         }
-
       },
       {
         path: '/user',
         name: 'user',
         component: () => import('@/views/UserManage/UserManage.vue'),
         meta: {
-          index: 4
+          index: 5
         }
       },
       {
@@ -58,7 +65,7 @@ const routes = [{
         name: 'page1',
         component: () => import('@/views/OtherManage/PageOne.vue'),
         meta: {
-          index: 5
+          index: 6
         }
       },
       {
@@ -66,7 +73,7 @@ const routes = [{
         name: 'page2',
         component: () => import('@/views/OtherManage/PageTwo.vue'),
         meta: {
-          index: 6
+          index: 7
         }
       },
       {
@@ -74,7 +81,7 @@ const routes = [{
         name: 'page3',
         component: () => import('@/views/OtherManage/PageThree.vue'),
         meta: {
-          index: 7
+          index: 8
         }
       },
       {
@@ -82,7 +89,7 @@ const routes = [{
         name: 'page4',
         component: () => import('@/views/OtherManage/PageFour.vue'),
         meta: {
-          index: 8
+          index: 9
         }
       },
       {
@@ -92,7 +99,15 @@ const routes = [{
         meta: {
           index: 9
         }
-      },
+      }
+      // {
+      //   path: '/page6',
+      //   name: 'page6',
+      //   component: () => import('@/views/OtherManage/PageFive.vue'),
+      //   meta: {
+      //     index: 9
+      //   }
+      // },
     ]
   },
   {

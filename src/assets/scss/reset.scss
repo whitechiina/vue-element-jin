@@ -7,6 +7,10 @@ html body {
     margin-bottom: 20px;
 }
 
+.vxe-toolbar {
+    background-color: transparent !important;
+}
+
 .vxe-pager .vxe-pager--wrapper {
     width: 100%;
     text-align: center;
@@ -42,6 +46,11 @@ html body {
 .el-tag--dark {
     border-color: #0066CC !important;
 }
+
+.el-menu-item-group__title {
+    padding: 0px !important;    
+}
+
 // 进度条
 #nprogress .bar {
     background-color: #fff;

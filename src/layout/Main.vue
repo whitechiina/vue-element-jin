@@ -67,6 +67,8 @@ export default {
     min-height: 400px;
   }
   .main {
-    padding: 0px 20px;
+    padding: 20px 20px;
+    /* 路由背景色 */
+    background-color: #f0f2f5;
   }
 </style>

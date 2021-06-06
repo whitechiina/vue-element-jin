@@ -2,38 +2,57 @@
   <div class="home-index-box">
     <LineTitle :title="title"></LineTitle>
     <div class="form">
-      <el-select v-model="value0" placeholder="请选择数据类型">
+      <div class="row">
+        <el-select v-model="value0" placeholder="请选择数据类型">
         <el-option
           v-for="item in options0"
           :key="item.value"
           :label="item.label"
           :value="item.value"
-        ></el-option>
-      </el-select>
-      <el-select v-model="value1" placeholder="请选择数据类型">
-        <el-option
-          v-for="item in options1"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        ></el-option>
-      </el-select>
-      <el-select v-model="value2" placeholder="请选择数据类型">
-        <el-option
-          v-for="item in options2"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        ></el-option>
-      </el-select>
-      <el-select v-model="value3" placeholder="请选择数据类型">
-        <el-option
-          v-for="item in options3"
-          :key="item.value"
-          :label="item.label"
-          :value="item.value"
-        ></el-option>
-      </el-select>
+          ></el-option>
+        </el-select>
+      </div>
+      <div class="row">
+        <el-select v-model="value1" placeholder="请选择数据类型">
+          <el-option
+            v-for="item in options1"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          ></el-option>
+        </el-select>
+      </div>
+      <div class="row">
+        <el-select v-model="value1" placeholder="请选择数据类型">
+          <el-option
+            v-for="item in options1"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          ></el-option>
+        </el-select>
+      </div>
+      <div class="row">
+        <el-select v-model="value2" placeholder="请选择数据类型">
+          <el-option
+            v-for="item in options2"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          ></el-option>
+        </el-select>
+      </div>
+      <div class="row">
+        <el-select v-model="value3" placeholder="请选择数据类型">
+          <el-option
+            v-for="item in options3"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+          ></el-option>
+        </el-select>
+      </div>
+      
       <el-button type="primary">查看曲线图</el-button>
     </div>
     <!--折线趋势图-->
@@ -156,5 +175,12 @@ export default {
   position: relative;
   width: auto;
   height: calc(100vh - 280px);
+}
+
+.form {
+  .row {
+    display: inline-block;
+    padding-right: 10px;
+  }
 }
 </style>

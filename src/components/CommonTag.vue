@@ -100,7 +100,6 @@ export default {
 <style lang="scss" scoped>
 .tags {
   border-radius: none !important;
-  margin-bottom: 20px;
   position: relative;
   padding-bottom: 8px;
   padding-left: 8px;
