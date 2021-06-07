@@ -348,10 +348,11 @@ export default {
 }
 
 .el-tabs__header {
-  width: 100%;
-  position: absolute !important;
+  width: 240px;
+  position: fixed !important;
   bottom: 0 !important;
   margin: 0 0 1px;
+  z-index: 999;
 }
 .el-tabs__nav {
   width: 100%;
