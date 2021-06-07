@@ -141,6 +141,11 @@ export default {
               path: "/CropperImage",
               label: "裁剪组件",
               name: 'CropperImage', 
+            },
+            {
+              path: "/Scroll",
+              label: "无缝滚动",
+              name: 'Scroll', 
             }
           ]
         }

@@ -108,6 +108,14 @@ const routes = [{
           index: 12
         }
       },
+      {
+        path: '/Scroll',
+        name: 'Scroll',
+        component: () => import('@/views/ScrollView/index.vue'),
+        meta: {
+          index: 13
+        }
+      },
     ]
   },
   {
