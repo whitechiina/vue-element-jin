@@ -74,17 +74,13 @@ export default {
           icon: "video-play"
         },
         {
-          path: "/video",
-          label: "视频管理",
-          name: 'video',
-          icon: "video-play"
-        },
-        {
           path: "/user",
           label: "用户管理",
           name: 'user',
           icon: "user"
         },
+
+        // 设置
         {
           path: "/setting",
           label: "设置",
@@ -120,10 +116,32 @@ export default {
               label: "综合报表",
               name: 'page5', 
               icon: "setting"
+            },
+            {
+              path: "/404",
+              label: "404页面",
+              name: 'notFound', 
+              icon: "setting"
+            }
+          ]
+        },
+
+        // 组件
+        {
+          label: "组件",
+          name: 'VideoView',
+          icon: "video-play",
+          children: [
+            {
+              path: "/VideoView",
+              label: "视频组件",
+              name: 'VideoView', 
             }
           ]
         }
       ],
+
+      // 第二列
       asideMenuTwo: [
         {
           path: "/setting",

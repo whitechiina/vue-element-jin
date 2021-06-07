@@ -45,14 +45,6 @@ const routes = [{
         }
       },
       {
-        path: '/video',
-        name: 'video',
-        component: () => import('@/views/VideoManage/video.vue'),
-        meta: {
-          index: 4
-        }
-      },
-      {
         path: '/user',
         name: 'user',
         component: () => import('@/views/UserManage/UserManage.vue'),
@@ -97,17 +89,17 @@ const routes = [{
         name: 'page5',
         component: () => import('@/views/OtherManage/PageFive.vue'),
         meta: {
-          index: 9
+          index: 10
         }
-      }
-      // {
-      //   path: '/page6',
-      //   name: 'page6',
-      //   component: () => import('@/views/OtherManage/PageFive.vue'),
-      //   meta: {
-      //     index: 9
-      //   }
-      // },
+      },
+      {
+        path: '/VideoView',
+        name: 'VideoView',
+        component: () => import('@/views/VideoView/index.vue'),
+        meta: {
+          index: 11
+        }
+      },
     ]
   },
   {
