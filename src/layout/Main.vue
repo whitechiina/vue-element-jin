@@ -4,7 +4,7 @@
       <common-header></common-header>
     </el-header>
     <el-container>
-      <el-aside width="auto">
+      <el-aside width="auto" :style="{ height: height + 'px' }">
         <common-aside></common-aside>
       </el-aside>
       <el-main class="content" :style="{ height: height + 'px' }">
@@ -41,6 +41,10 @@ export default {
     ...mapState({
       color: state => state.color.color
     }),
+    height() {
+      const intViewportHeight = window.innerHeight - 56
+      return intViewportHeight
+    },
   }
 }
 </script>
