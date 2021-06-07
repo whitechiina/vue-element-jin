@@ -67,7 +67,7 @@ export default {
               { value: 59, name: 'Forecasts' }
             ],
             animationEasing: 'cubicInOut',
-            animationDuration: 2600
+            animationDuration: 3000
           }
         ]
       })

@@ -19,7 +19,7 @@
 
     <!-- 折线图 -->
     <div class="echarst-wrap">
-      <line-echarst height="300px"></line-echarst>
+      <line-echarst height="400px"></line-echarst>
     </div>
 
     <!-- pie和柱状图 -->

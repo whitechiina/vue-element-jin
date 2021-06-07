@@ -104,6 +104,8 @@ export default {
   padding-bottom: 8px;
   padding-left: 8px;
   border-bottom: 1px solid #d8dce5;
+  background-color: #fff;
+  padding-top: 8px;
   .tag-item {
     width: 100%;
     height: 40px;

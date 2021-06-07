@@ -4,7 +4,7 @@
       <common-header></common-header>
     </el-header>
     <el-container>
-      <el-aside width="auto" :style="{ height: height + 'px' }">
+      <el-aside width="auto">
         <common-aside></common-aside>
       </el-aside>
       <el-main class="content" :style="{ height: height + 'px' }">
@@ -41,11 +41,6 @@ export default {
     ...mapState({
       color: state => state.color.color
     }),
-    // 计算高度
-    height() {
-      const ViewHeight = window.innerHeight - 56;
-      return ViewHeight;
-    }
   }
 }
 </script>
@@ -58,6 +53,7 @@ export default {
 
   .content {
     overflow: scroll;
+    background-color: #f0f2f5;
   }
 </style>
 
@@ -69,6 +65,5 @@ export default {
   .main {
     padding: 20px 20px;
     /* 路由背景色 */
-    background-color: #f0f2f5;
   }
 </style>

@@ -9,7 +9,7 @@
     text-color="#ccc"
     active-text-color="#fff">
     <el-tabs v-model="activeName" @tab-click="handleClick">
-      <el-tab-pane :label="isCollage? '' : '安全监控'" name="first">
+      <el-tab-pane :label="isCollage? '安全' : '安全监控'" name="first">
         <el-menu-item :index="item.path" v-for="item in noChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{item.label}}</span>
@@ -31,7 +31,7 @@
       </el-tab-pane>
 
 
-      <el-tab-pane :label="isCollage? '' : '人员定位'" name="second">
+      <el-tab-pane :label="isCollage? '人员' : '人员定位'" name="second">
         <el-menu-item :index="item.path" v-for="item in PeopleChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{item.label}}</span>
