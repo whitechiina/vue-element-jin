@@ -136,6 +136,11 @@ export default {
               path: "/VideoView",
               label: "视频组件",
               name: 'VideoView', 
+            },
+            {
+              path: "/CropperImage",
+              label: "裁剪组件",
+              name: 'CropperImage', 
             }
           ]
         }

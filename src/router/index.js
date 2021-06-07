@@ -100,6 +100,14 @@ const routes = [{
           index: 11
         }
       },
+      {
+        path: '/CropperImage',
+        name: 'CropperImage',
+        component: () => import('@/views/CropperImage/index.vue'),
+        meta: {
+          index: 12
+        }
+      },
     ]
   },
   {
