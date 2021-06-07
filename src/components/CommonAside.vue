@@ -83,16 +83,10 @@ export default {
         // 设置
         {
           path: "/setting",
-          label: "设置",
+          label: "报表",
           name: 'setting',
           icon: "user",
           children: [
-            {
-              path: "/page1",
-              label: "折线图",
-              name: 'page1', 
-              icon: "setting"
-            },
             {
               path: "/page2",
               label: "报表打印",
@@ -116,12 +110,6 @@ export default {
               label: "综合报表",
               name: 'page5', 
               icon: "setting"
-            },
-            {
-              path: "/404",
-              label: "404页面",
-              name: 'notFound', 
-              icon: "setting"
             }
           ]
         },
@@ -132,6 +120,12 @@ export default {
           name: 'VideoView',
           icon: "video-play",
           children: [
+            {
+              path: "/page1",
+              label: "折线图",
+              name: 'page1', 
+              icon: "setting"
+            },
             {
               path: "/VideoView",
               label: "视频组件",
@@ -146,6 +140,12 @@ export default {
               path: "/Scroll",
               label: "无缝滚动",
               name: 'Scroll', 
+            },
+            {
+              path: "/404",
+              label: "404页面",
+              name: 'notFound', 
+              icon: "setting"
             }
           ]
         }
