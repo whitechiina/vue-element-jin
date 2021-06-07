@@ -16,21 +16,39 @@
         </el-col>
       </el-row>
     </div>
-    
 
     <!-- 折线图 -->
-    <div class="line">
-      <line-echarts id="lineEcharts" height="300px" ref="echarts"></line-echarts>
+    <div class="echarst-wrap">
+      <line-echarst height="300px"></line-echarst>
+    </div>
+
+    <!-- pie和柱状图 -->
+    <div class="bottom">
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <div class="echarst-wrap">
+            <pie-echarst />
+          </div>
+        </el-col>
+        <el-col :span="12">
+          <div class="echarst-wrap">
+            <bar-echarst />
+          </div>
+        </el-col>
+      </el-row>
     </div>
   </div>
 </template>
 
 <script>
-import LineEcharts from "./components/LineEcharst.vue"
-
+import LineEcharst from "./components/LineEcharst.vue"
+import PieEcharst from "./components/PieEcharst.vue"
+import BarEcharst from "./components/BarEcharst.vue"
 export default {
   components: {
-    LineEcharts
+    LineEcharst,
+    PieEcharst,
+    BarEcharst
   },
   data() {
     return {
@@ -92,10 +110,13 @@ export default {
     }
   }
 
-
-  .line {
+  .echarst-wrap {
     border: 1px solid #d8dce5;
     padding: 10px;
     background-color: white;
+  }
+
+  .bottom {
+    margin-top: 20px;
   }
 </style>
