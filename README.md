@@ -1,5 +1,10 @@
 # Vue-Element-Jin后台管理系统
 
+# 预览地址
+```
+https://whitechiina.github.io/Vue-Element-Jin-/dist/#/
+```
+
 # 技术栈
 ```
 ES6  Js
