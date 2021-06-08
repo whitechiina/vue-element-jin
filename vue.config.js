@@ -1,3 +1,5 @@
+const name = 'Vue-Element-Jin后台管理系统' // page title
+
 module.exports = {
     //基本路径
     publicPath: './', //默认的'/'是绝对路径，如果不确定在根路径，改成相对路径'./'
@@ -7,6 +9,15 @@ module.exports = {
     indexPath: 'index.html',
     // 生产环境是否生成 sourceMap 文件
     productionSourceMap: false,
+
+    chainWebpack: config => {
+        config
+        .plugin('html')
+        .tap(args => {
+            args[0].title = name
+            return args
+        })
+    },
     // webpack-dev-server 相关配置
     devServer: { 
         open: false, //open 在devServer启动且第一次构建完成时，自动用我们的系统的默认浏览器去打开要开发的网页
@@ -23,5 +34,5 @@ module.exports = {
             }
         }, // 设置代理
         before: app => {}
-    }
+    },
 };
