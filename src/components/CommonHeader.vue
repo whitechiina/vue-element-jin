@@ -1,14 +1,16 @@
 <template>
   <div class="header">
     <div class="left">
-      <div class="logo" :class="!isCollapse? 'havewidth':'nowidth'">
-        <div class="picture">
-          <img src="../assets/images/logo.png">
+      <router-link to="/">
+        <div class="logo" :class="!isCollapse? 'havewidth':'nowidth'">
+          <div class="picture">
+            <img src="../assets/images/logo.png">
+          </div>
+          <div class="title" v-show="!isCollapse">
+            <h1>{{projectitle? projectitle : '可在右侧设置'}}</h1>
+          </div>
         </div>
-        <div class="title" v-show="!isCollapse">
-          <h1>{{projectitle}}</h1>
-        </div>
-      </div>
+      </router-link>
       <div class="flex" @click="collapseMenu">
         <i class="iconfont icon-indent"></i>
       </div>

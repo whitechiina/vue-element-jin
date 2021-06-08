@@ -16,7 +16,7 @@
         </el-menu-item>
         <el-submenu :index="item.path" v-for="(item, index) in hasChildren" :key="index">
           <template slot="title">
-            <i class="el-icon-location"></i>
+            <i :class="'el-icon-' + item.icon"></i>
             <span v-show="!isCollage">{{item.label}}</span>
           </template>
           <el-menu-item-group>
@@ -71,7 +71,7 @@ export default {
           path: "/server",
           label: "网络请求",
           name: 'server',
-          icon: "video-play"
+          icon: "loading"
         },
         {
           path: "/user",
@@ -85,31 +85,27 @@ export default {
           path: "/setting",
           label: "报表",
           name: 'setting',
-          icon: "user",
+          icon: "edit-outline",
           children: [
             {
               path: "/page2",
               label: "报表打印",
-              name: 'page2', 
-              icon: "setting"
+              name: 'page2'
             },
             {
               path: "/page3",
               label: "报表导出",
-              name: 'page3', 
-              icon: "setting"
+              name: 'page3'
             },
             {
               path: "/page4",
               label: "报表筛选",
-              name: 'page4', 
-              icon: "setting"
+              name: 'page4'
             },
             {
               path: "/page5",
               label: "综合报表",
-              name: 'page5', 
-              icon: "setting"
+              name: 'page5'
             }
           ]
         },
@@ -118,13 +114,12 @@ export default {
         {
           label: "组件",
           name: 'VideoView',
-          icon: "video-play",
+          icon: "menu",
           children: [
             {
               path: "/page1",
               label: "折线图",
-              name: 'page1', 
-              icon: "setting"
+              name: 'page1'
             },
             {
               path: "/VideoView",
@@ -144,8 +139,7 @@ export default {
             {
               path: "/404",
               label: "404页面",
-              name: 'notFound', 
-              icon: "setting"
+              name: 'notFound'
             }
           ]
         }
@@ -342,20 +336,36 @@ export default {
 </script>
 
 <style lang="scss">
+.el-aside {
+  overflow: scroll;
+}
+
 .el-menu {
   height: 100%;
   border: none;
 }
 
 .el-tabs__header {
-  width: 240px;
-  position: fixed !important;
-  bottom: 0 !important;
+  width: 100%;
   margin: 0 0 1px;
   z-index: 999;
 }
+
 .el-tabs__nav {
   width: 100%;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+#tab-first {
+  line-height: 55px;
+  height: 55px !important;
+  border-right: 1px solid #fff;
+}
+
+#tab-second {
+  line-height: 55px;
+  height: 55px !important;
 }
 
 .el-tabs__item {
