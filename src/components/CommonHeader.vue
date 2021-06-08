@@ -34,7 +34,7 @@
               <a href="http://www.baidu.com" target="_blank">gitee地址</a>
             </el-dropdown-item>
             <el-dropdown-item>
-              <a href="www.baidu.com" target="_blank">gitee地址</a>
+              <a href="www.baidu.com" target="_blank">github地址</a>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>

@@ -4,7 +4,7 @@
       <div class="loginBox">
         <div class="loginCon">
           <div class="title">
-            <p>澄城县煤炭管理局安全联网系统</p>
+            <p>Vue-Element-Jin后台管理系统</p>
           </div>
           <div class="pane">
             <el-card shadow="always" class="login-module" v-if="smdl">
