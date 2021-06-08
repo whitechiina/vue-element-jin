@@ -31,10 +31,10 @@
           </span>
           <el-dropdown-menu slot="dropdown">
             <el-dropdown-item>
-              <a href="http://www.baidu.com" target="_blank">gitee地址</a>
+              <a href="https://gitee.com/yao_wei_jin/Vue-Element-Jin" target="_blank">gitee地址</a>
             </el-dropdown-item>
             <el-dropdown-item>
-              <a href="www.baidu.com" target="_blank">github地址</a>
+              <a href="https://github.com/whitechiina" target="_blank">github地址</a>
             </el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
