@@ -10,15 +10,13 @@
     active-text-color="#fff">
     <el-tabs v-model="activeName" @tab-click="handleClick">
       <el-tab-pane :label="isCollage? '安全' : '安全监控'" name="first">
-        <el-menu-item :index="item.path" v-for="item in noChildren" :key="item.path" @click="clickMenu(item)">
+        <el-menu-item :index="item.path + ''" v-for="item in noChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
-          <!-- <span slot="title">{{item.label}}</span> -->
           <span>{{ $t(`routeName.${item.label}`) }}</span>
         </el-menu-item>
-        <el-submenu :index="item.path" v-for="(item, index) in hasChildren" :key="index">
+        <el-submenu :index="item.path + ''" v-for="(item, index) in hasChildren" :key="index">
           <template slot="title">
             <i :class="'el-icon-' + item.icon"></i>
-            <!-- <span v-show="!isCollage">{{item.label}}</span> -->
             <span>{{ $t(`routeName.${item.label}`) }}</span>
           </template>
           <el-menu-item-group>
@@ -34,11 +32,11 @@
 
 
       <el-tab-pane :label="isCollage? '人员' : '人员定位'" name="second">
-        <el-menu-item :index="item.path" v-for="item in PeopleChildren" :key="item.path" @click="clickMenu(item)">
+        <el-menu-item :index="item.path + ''" v-for="item in PeopleChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
           <span slot="title">{{item.label}}</span>
         </el-menu-item>
-        <el-submenu :index="item.path" v-for="(item, index) in hasPeopleChildren" :key="index">
+        <el-submenu :index="item.path + ''" v-for="(item, index) in hasPeopleChildren" :key="index">
           <template slot="title">
             <i class="el-icon-location"></i>
             <span v-show="!isCollage">{{item.label}}</span>
