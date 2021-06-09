@@ -2,7 +2,7 @@
 
 # 预览地址
 ```
-https://whitechiina.github.io/Vue-Element-Jin-/dist/#/
+github国内: https://whitechiina.github.io/Vue-Element-Jin-/dist/#/
 ```
 
 # 技术栈
@@ -19,6 +19,29 @@ echarts  可视化
 vxe-table  表格
 xgplayer  视频组件
 nprogress  进度条
+```
+
+# 项目目录
+```
+├── README.md     说明文档
+├── babel.config.js     bable编译
+├── dist     打包文件
+├── node_modules     依赖包
+├── package-lock.json     
+├── package.json  项目基本信息
+├── src 
+│   ├── App.vue     根组件
+│   ├── api     api接口
+│   ├── assets     资源目录
+│   ├── components     组件目录
+│   ├── layout     布局目录
+│   ├── main.js     入口js文件
+│   ├── plugin     第三方配置
+│   ├── router     前端路由
+│   ├── store     全局状态管理
+│   ├── utils     全局方法和工具函数
+│   └── views     页面文件
+└── vue.config.js     webpack的配置文件
 ```
 
 # 克隆项目
