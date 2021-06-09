@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import i18n from "./i18n/i18n"
 import './assets/icon/iconfont.css'
 import animated from "animate.css";
 import '@/api/config'  //网络请求
@@ -32,5 +33,6 @@ Vue.prototype.$message = ElementUI.Message
 new Vue({
   router,
   store,
+  i18n,
   render: h => h(App)
 }).$mount('#app')

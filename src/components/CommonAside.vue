@@ -12,12 +12,14 @@
       <el-tab-pane :label="isCollage? '安全' : '安全监控'" name="first">
         <el-menu-item :index="item.path" v-for="item in noChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
-          <span slot="title">{{item.label}}</span>
+          <!-- <span slot="title">{{item.label}}</span> -->
+          <span>{{ $t(`routeName.${item.label}`) }}</span>
         </el-menu-item>
         <el-submenu :index="item.path" v-for="(item, index) in hasChildren" :key="index">
           <template slot="title">
             <i :class="'el-icon-' + item.icon"></i>
-            <span v-show="!isCollage">{{item.label}}</span>
+            <!-- <span v-show="!isCollage">{{item.label}}</span> -->
+            <span>{{ $t(`routeName.${item.label}`) }}</span>
           </template>
           <el-menu-item-group>
             <el-menu-item
@@ -63,19 +65,19 @@ export default {
       asideMenu: [
         {
           path: "/",
-          label: "首页",
+          label: "home",
           name: 'home',
           icon: "s-home"
         },
         {
           path: "/server",
-          label: "网络请求",
+          label: "network",
           name: 'server',
           icon: "loading"
         },
         {
           path: "/user",
-          label: "用户管理",
+          label: "user",
           name: 'user',
           icon: "user"
         },
@@ -83,7 +85,7 @@ export default {
         // 设置
         {
           path: "/setting",
-          label: "报表",
+          label: "statement",
           name: 'setting',
           icon: "edit-outline",
           children: [
@@ -112,7 +114,7 @@ export default {
 
         // 组件
         {
-          label: "组件",
+          label: "components",
           name: 'VideoView',
           icon: "menu",
           children: [

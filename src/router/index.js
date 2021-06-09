@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
+// 导入英语
+// import en from "../i18n/lang/en"
 Vue.use(VueRouter)
 
 /**

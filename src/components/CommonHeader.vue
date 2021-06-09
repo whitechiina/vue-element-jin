@@ -42,8 +42,10 @@
       <div class="full" @click="full">
         <i class="iconfont icon-quanping"></i>
       </div>
+      <div class="language">
+        <CommonLang></CommonLang>
+      </div>
       <div class="login">
-        <div class="username">管理员</div>
         <el-dropdown @command="handleCommand">
           <span class="el-dropdown-link">
             比克大魔王<i class="el-icon-arrow-down el-icon--right"></i>
@@ -54,6 +56,7 @@
             <el-dropdown-item command="logout">退出</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
+        <div class="username">[ 管理员 ]</div>
         <div class="userpic">
           <img src="https://nirongxu.github.io/vue-xuAdmin/dist/static/images/icon.jpg">
         </div>
@@ -72,8 +75,9 @@ import screenfull from 'screenfull'
 import { mapState } from 'vuex'
 import UserInfo from "@/components/userForm/userInfo"
 import EditPassword from "@/components/userForm/userPassword"
+import CommonLang from "@/components/CommonLang"
 export default {
-  components: { UserInfo, EditPassword },
+  components: { UserInfo, EditPassword, CommonLang },
   data () {
     return {
       isFullscreen: false,
@@ -194,6 +198,7 @@ export default {
       .username {
         font-size: 14px;
         color: #fff;
+        padding-right: 20px;
       }
       .userpic {
         width: 40px;
