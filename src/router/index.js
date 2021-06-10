@@ -120,6 +120,14 @@ const routes = [{
           index: 13
         }
       },
+      {
+        path: "/table",
+        name: 'table',
+        component: () => import('@/views/TableView/index.vue'),
+        meta: {
+          index: 14
+        }
+      }
     ]
   },
   {

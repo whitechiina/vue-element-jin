@@ -139,6 +139,11 @@ export default {
               path: "/404",
               label: "404页面",
               name: 'notFound'
+            },
+            {
+              path: "/table",
+              label: "表格组件",
+              name: 'table'
             }
           ]
         }

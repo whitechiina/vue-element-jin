@@ -1,5 +1,5 @@
 <template>
-  <div class="tags" v-if="!tagflag">
+  <div class="tags" v-if="!tagflag" :style="{width: tagwidth + 'px'}">
     <el-tag
       :key="tag.name"
       size="small"
@@ -36,8 +36,19 @@ export default {
   computed: {
     ...mapState({
         tags: state => state.tab.tabList,
-        tagflag: state => state.tab.tagFlag
-    })
+        tagflag: state => state.tab.tagFlag,
+        isCollapse: state => state.tab.isCollapse
+    }),
+
+    tagwidth() {
+      if (this.isCollapse) {
+        let intViewportHeight = window.innerWidth - 64
+        return intViewportHeight
+      } else {
+        let intViewportHeight = window.innerWidth - 248
+        return intViewportHeight
+      }
+    }
   },
   watch: {
     visible(value) {
@@ -100,12 +111,15 @@ export default {
 <style lang="scss" scoped>
 .tags {
   border-radius: none !important;
-  position: relative;
+  position: absolute;
   padding-left: 8px;
   border-bottom: 1px solid #d8dce5;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
   background-color: #fff;
   padding-top: 8px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  z-index: 999;
   .tag-item {
     width: 100%;
     height: 40px;
