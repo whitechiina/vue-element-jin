@@ -7,7 +7,7 @@ export default {
         tabList: [
             {
                 path: "/",
-                label: "首页",
+                label: "home",
                 name: 'home',
                 icon: "video-play"
             },

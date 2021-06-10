@@ -14,7 +14,9 @@
             mode="out-in"
             enter-active-class="animate__animated animate__fadeIn"
             leave-active-class="animate__animated animate__fadeOutRight">
-            <router-view></router-view>
+            <keep-alive>
+              <router-view></router-view>
+            </keep-alive>
           </transition>
         </div>
       </el-main>

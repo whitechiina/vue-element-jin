@@ -11,7 +11,7 @@
       :effect="$route.name === tag.name? 'dark': 'plain'"
     >
     <span class="tag-item" @contextmenu.prevent="openMenu($event,tag)">
-      {{tag.label}}
+      {{ $t(`routeName.${tag.label}`) }}
     </span>
     <!-- 右键菜单 -->
     <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
@@ -104,6 +104,7 @@ export default {
   padding-bottom: 8px;
   padding-left: 8px;
   border-bottom: 1px solid #d8dce5;
+  box-shadow: 0 1px 4px rgba(0,21,41,.08);
   background-color: #fff;
   padding-top: 8px;
   .tag-item {
@@ -132,10 +133,11 @@ export default {
 .el-tag {
   cursor: pointer;
   border-radius: 0px !important;
-  height: 40px !important;
-  line-height: 40px !important;
+  height: 30px !important;
+  line-height: 30px !important;
   padding: 0px 20px;
   margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 // 右键样式

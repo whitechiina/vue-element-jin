@@ -12,12 +12,12 @@
       <el-tab-pane :label="isCollage? '安全' : '安全监控'" name="first">
         <el-menu-item :index="item.path + ''" v-for="item in noChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
-          <span>{{ $t(`routeName.${item.label}`) }}</span>
+          <span  v-show="!isCollage">{{ $t(`routeName.${item.label}`) }}</span>
         </el-menu-item>
         <el-submenu :index="item.path + ''" v-for="(item, index) in hasChildren" :key="index">
           <template slot="title">
             <i :class="'el-icon-' + item.icon"></i>
-            <span>{{ $t(`routeName.${item.label}`) }}</span>
+            <span v-show="!isCollage">{{ $t(`routeName.${item.label}`) }}</span>
           </template>
           <el-menu-item-group>
             <el-menu-item
@@ -29,7 +29,6 @@
           </el-menu-item-group>
         </el-submenu>
       </el-tab-pane>
-
 
       <el-tab-pane :label="isCollage? '人员' : '人员定位'" name="second">
         <el-menu-item :index="item.path + ''" v-for="item in PeopleChildren" :key="item.path" @click="clickMenu(item)">
@@ -358,14 +357,14 @@ export default {
 }
 
 #tab-first {
-  line-height: 55px;
-  height: 55px !important;
+  line-height: 44px;
+  height: 44px !important;
   border-right: 1px solid #fff;
 }
 
 #tab-second {
-  line-height: 55px;
-  height: 55px !important;
+  line-height: 44px;
+  height: 44px !important;
 }
 
 .el-tabs__item {
