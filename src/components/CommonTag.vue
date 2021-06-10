@@ -101,7 +101,6 @@ export default {
 .tags {
   border-radius: none !important;
   position: relative;
-  padding-bottom: 8px;
   padding-left: 8px;
   border-bottom: 1px solid #d8dce5;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
@@ -137,7 +136,7 @@ export default {
   line-height: 30px !important;
   padding: 0px 20px;
   margin-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 // 右键样式

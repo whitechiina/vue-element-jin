@@ -16,7 +16,10 @@ const routes = [{
     path: "/login",
     component: () => import('@/views/Login/index.vue'),
     hidden: true,
-    children: []
+    children: [],
+    meta: {
+      keepAlive: false // 不需要缓存
+    }
   },
   {
     path: '/',

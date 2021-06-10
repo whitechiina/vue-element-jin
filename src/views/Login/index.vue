@@ -45,7 +45,7 @@ export default {
       color: 'red',
       smdl: true,
       loginForm: {
-        username: "vue-jinadmin",
+        username: "vue-element-jin",
         password: "123456"
       }
     }
