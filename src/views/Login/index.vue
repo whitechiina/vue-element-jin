@@ -9,7 +9,7 @@
           <div class="pane">
             <el-card shadow="always" class="login-module" v-if="smdl">
               <div slot="header" class="clearfix formTitlt">
-                <span>密码登录</span>
+                <span>账号登录</span>
                 <span class="titIconbox">
                 <i class="iconfont xu-saomadenglu2 fa-lg iconcolor"></i>
                 <i class="iconfont xu-saomadenglu01 el-icon--right fa-lg pointer" @click="smdl = !smdl"></i>
@@ -21,7 +21,17 @@
                 </el-form-item>
                 <el-form-item>
                   <el-input type="password" v-model="loginForm.password" auto-complete="off"
-                            placeholder="请输入登录密码"></el-input>
+                    placeholder="请输入登录密码"></el-input>
+                </el-form-item>
+                <el-form-item>
+                  <div class="yzm">
+                    <el-input type="text" v-model="loginForm.code" auto-complete="off"
+                    placeholder="请输入验证码"></el-input>
+                  <!--验证码组件-->
+                  <div @click=refreshCode>
+                    <s-identify :identifyCode="identifyCode"></s-identify>
+                  </div>
+                  </div>
                 </el-form-item>
                 <el-form-item>
                   <el-button class="subBtn" type="primary" @click="submitForm">登录</el-button>
@@ -39,26 +49,44 @@
   </div>
 </template>
 <script>
+import SIdentify from './sidentify'
 export default {
+  components: { SIdentify },
   data () {
     return {
       color: 'red',
       smdl: true,
+      identifyCodes: "1234567890",
+      identifyCode: "",
       loginForm: {
         username: "vue-element-jin",
-        password: "123456"
+        password: "123456",
+        code:""//text框输入的验证码
       }
     }
+  },
+  mounted(){
+    this.loginForm.code = "";
+    this.makeCode(this.identifyCodes, 4);
+    this.message();
   },
   methods: {
     submitForm () {
       let that = this
-      if (this.loginForm.username === "" || this.loginForm.password === "") {
+      if (this.loginForm.username === "" || this.loginForm.password === "" || this.loginForm.code === "") {
         this.$message({
           showClose: true,
-          message: "账号或密码不能为空",
+          message: "账号或密码、验证码不能为空",
           type: "error"
         })
+        return false
+      } else if (this.loginForm.code !== this.identifyCode) {
+        this.$message({
+          showClose: true,
+          message: "验证码错误",
+          type: "error"
+        })
+        this.refreshCode();
         return false
       } else {
         // 真实请求参考
@@ -87,6 +115,24 @@ export default {
         })
       }
     },
+
+    //验证码
+    randomNum(min, max) {
+      return Math.floor(Math.random() * (max - min) + min);
+    },
+    
+    refreshCode() {
+      this.identifyCode = "";
+      this.makeCode(this.identifyCodes, 4);
+    },
+    makeCode(o, l) {
+      for (let i = 0; i < l; i++) {
+        this.identifyCode += this.identifyCodes[
+          this.randomNum(0, this.identifyCodes.length)
+        ];
+      }
+    },
+
     message () {
       const h = this.$createElement
       this.$notify({
@@ -95,9 +141,6 @@ export default {
         duration: 6000
       })
     }
-  },
-  mounted () {
-    this.message()
   }
 }
 </script>
@@ -109,6 +152,7 @@ export default {
     background-size: cover;
     background-position: center left;
     z-index: 9999;
+    overflow: hidden;
     .loginConbox{
     }
     .logo{
@@ -127,7 +171,7 @@ export default {
         color: #0066CC;
       }
 
-      padding: 74px 0 118px;
+      padding: 50px 0 118px;
 
       .loginCon {
         width: 990px;
@@ -144,12 +188,13 @@ export default {
           margin-top: 0px;
           text-align: center;
           margin: 0 auto;
-          .p {
+          p {
+            margin-bottom: 0px;
             text-align: center;
           }
           &:first-child{
             font-size: 44px;
-            margin-bottom: 140px;
+            margin-bottom: 120px;
           }
         }
         .pane {
@@ -157,8 +202,8 @@ export default {
         }
         .login-module {
           width: 380px;
-          height: 325px;
-          margin-top: 60px;
+          height: 380px;
+          margin-top: 10px;
           border: none;
           margin: 0 auto;
           right: 0;
@@ -244,5 +289,11 @@ export default {
         }
       }
     }
+  }
+
+  .yzm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 </style>
