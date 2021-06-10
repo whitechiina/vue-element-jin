@@ -1,5 +1,5 @@
 <template>
-  <div class="tags" v-if="!tagflag" :style="{width: tagwidth + 'px'}">
+  <div id="tags" v-if="!tagflag" :style="{width: tagwidth + 'px'}">
     <el-tag
       :key="tag.name"
       size="small"
@@ -33,6 +33,11 @@ export default {
       inputValue: ""
     }
   },
+  mounted() {
+    this.$nextTick(() => {
+      this.scrollInit()
+    })
+  },
   computed: {
     ...mapState({
         tags: state => state.tab.tabList,
@@ -57,9 +62,6 @@ export default {
       } else {
         document.body.removeEventListener('click', this.closeMenu)
       }
-    },
-    tags() {
-      // this.$router.push('/home')
     }
   },
   methods: {
@@ -102,6 +104,33 @@ export default {
     },
     closeMenu() {
       this.visible = false
+    },
+
+    // 初始化与绑定监听事件方法
+    scrollInit() {
+      // 获取要绑定事件的元素
+      const scrollDiv = document.getElementById("tags");
+      // document.addEventListener('DOMMouseScroll', handler, false)
+      // 添加滚轮滚动监听事件，一般是用下面的方法，上面的是火狐的写法
+      scrollDiv.addEventListener('mousewheel', handler, false)
+      // 滚动事件的出来函数
+      function handler(event) {
+        // 获取滚动方向
+        const detail = event.wheelDelta || event.detail;
+        // 定义滚动方向，其实也可以在赋值的时候写
+        const moveForwardStep = 1;
+        const moveBackStep = -1;
+        // 定义滚动距离
+        let step = 0;
+        // 判断滚动方向,这里的100可以改，代表滚动幅度，也就是说滚动幅度是自定义的
+        if (detail < 0) {
+          step = moveForwardStep * 100;
+        } else {
+          step = moveBackStep * 100;
+        }
+        // 对需要滚动的元素进行滚动操作
+        scrollDiv.scrollLeft += step;
+      }
     }
   }
 };
@@ -109,7 +138,7 @@ export default {
 
 
 <style lang="scss" scoped>
-.tags {
+#tags {
   border-radius: none !important;
   position: absolute;
   padding-left: 8px;
@@ -118,7 +147,7 @@ export default {
   background-color: #fff;
   padding-top: 8px;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow-x: hidden;
   z-index: 999;
   .tag-item {
     width: 100%;

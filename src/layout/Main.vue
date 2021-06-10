@@ -9,7 +9,7 @@
       </el-aside>
       <el-main class="content" :style="{ height: height + 'px' }">
         <common-tag></common-tag>
-        <div class="main">
+        <div class="content-main">
           <transition  
             mode="out-in"
             enter-active-class="animate__animated animate__fadeIn"
@@ -68,9 +68,9 @@ export default {
     width: 240px;
     min-height: 400px;
   }
-  .main {
-    margin-top: 20px;
-    padding: 20px 20px;
+  .content-main {
+    padding: 0px 20px;
+    margin-top: 60px;
     /* 路由背景色 */
   }
 </style>
