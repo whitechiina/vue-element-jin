@@ -4,7 +4,8 @@
 ```
 github国内: https://whitechiina.github.io/Vue-Element-Jin-/dist/#/
 ```
-![Image text](https://cdn.nlark.com/yuque/0/2021/png/428808/1623740847233-e06af905-11d4-46de-93c1-98f70392661e.png)
+<img src="./static/images/cover" width="100%" height="auto"/>  
+
 # 技术栈
 ```
 ES6  Js
