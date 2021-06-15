@@ -4,7 +4,7 @@
 ```
 github国内: https://whitechiina.github.io/Vue-Element-Jin-/dist/#/
 ```
-<img src="./static/images/cover" width="100%" height="auto"/>  
+![img](https://gitee.com/yao_wei_jin/Vue-Element-Jin/raw/master/src/assets/images/cover.png)
 
 # 技术栈
 ```
