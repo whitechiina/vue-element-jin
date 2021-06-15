@@ -32,7 +32,7 @@
       <h1>监控设备故障记录报表</h1>
     </div>
 
-    <vxe-table border ref="xTable" height="400" :print-config="{}" :data="tableData">
+    <vxe-table border ref="xTable" height="530" :print-config="{}" :data="tableData">
       <vxe-table-column type="checkbox" width="60"></vxe-table-column>
       <vxe-table-column type="seq" width="60"></vxe-table-column>
       <vxe-table-column field="name" title="Name"></vxe-table-column>
@@ -118,6 +118,24 @@ export default {
           role: "Test",
           sex: "Man",
           age: 29,
+          address: "vxe-table 从入门到放弃"
+        },
+        {
+          id: 10008,
+          name: "Test8",
+          nickname: "T8",
+          role: "Develop",
+          sex: "Man",
+          age: 35,
+          address: "vxe-table 从入门到放弃"
+        },
+        {
+          id: 10008,
+          name: "Test8",
+          nickname: "T8",
+          role: "Develop",
+          sex: "Man",
+          age: 35,
           address: "vxe-table 从入门到放弃"
         },
         {

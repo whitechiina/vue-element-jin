@@ -25,7 +25,9 @@
               v-for="(subItem, subIndex) in item.children"
               :key="subIndex"
               @click="clickMenu(subItem)"
-            >{{subItem.label}}</el-menu-item>
+            >
+            <i :class="'el-icon-' + subItem.icon"></i>
+            {{subItem.label}}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-tab-pane>
@@ -46,7 +48,9 @@
               v-for="(subItem, subIndex) in item.children"
               :key="subIndex"
               @click="clickMenu(subItem)"
-            >{{subItem.label}}</el-menu-item>
+            >
+            <i :class="'el-icon-' + subItem.icon"></i>
+            {{subItem.label}}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-tab-pane>
@@ -89,12 +93,14 @@ export default {
             {
               path: "/page2",
               label: "报表打印",
-              name: 'page2'
+              name: 'page2',
+              icon: "loading"
             },
             {
               path: "/page3",
               label: "报表导出",
-              name: 'page3'
+              name: 'page3',
+              icon: "edit-outline"
             },
             {
               path: "/page4",
@@ -129,6 +135,7 @@ export default {
               path: "/CropperImage",
               label: "裁剪组件",
               name: 'CropperImage', 
+              icon: "edit-outline"
             },
             {
               path: "/Scroll",

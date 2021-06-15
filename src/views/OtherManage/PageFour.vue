@@ -39,6 +39,13 @@
           <vxe-table-column field="sex" title="Sex"></vxe-table-column>
           <vxe-table-column field="age" title="Age"></vxe-table-column>
         </vxe-table> 
+
+        <vxe-pager
+        align="left"
+        :current-page.sync="page1.currentPage"
+        :page-size.sync="page1.pageSize"
+        :total="page1.totalResult"
+        ></vxe-pager>
     </div>
 </template>
 
@@ -74,7 +81,12 @@ export default {
             { id: 10006, name: 'Test6', role: 'Designer', sex: 'Women', age: 21, address: 'vxe-table 从入门到放弃' },
             { id: 10007, name: 'Test7', role: 'Test', sex: 'Man', age: 29, address: 'vxe-table 从入门到放弃' },
             { id: 10008, name: 'Test8', role: 'Develop', sex: 'Man', age: 35, address: 'vxe-table 从入门到放弃' }
-            ]
+            ],
+            page1: {
+                currentPage: 1,
+                pageSize: 10,
+                totalResult: 200
+            },
         }
     },
     created () {
