@@ -14,7 +14,7 @@
       {{ $t(`routeName.${tag.label}`) }}
     </span>
     <!-- 右键菜单 -->
-    <ul v-show="visible" :style="{left:left+'px',top:top+'px'}" class="contextmenu">
+    <ul v-show="visible" :style="{left:left+'px',top: 4 +'px'}" class="contextmenu">
       <li @click="allClose(tag)">关闭所有</li>
     </ul>
     </el-tag>
@@ -146,9 +146,9 @@ export default {
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
   background-color: #fff;
   padding-top: 8px;
+  overflow: hidden;
   white-space: nowrap;
-  overflow-x: hidden;
-  z-index: 999;
+  z-index: 9;
   .tag-item {
     width: 100%;
     height: 40px;

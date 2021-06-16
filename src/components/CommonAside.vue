@@ -76,13 +76,6 @@ export default {
           name: 'server',
           icon: "loading"
         },
-        {
-          path: "/user",
-          label: "user",
-          name: 'user',
-          icon: "user"
-        },
-
         // 设置
         {
           path: "/setting",
@@ -94,7 +87,7 @@ export default {
               path: "/page2",
               label: "报表打印",
               name: 'page2',
-              icon: "loading"
+              icon: "printer"
             },
             {
               path: "/page3",
@@ -105,12 +98,14 @@ export default {
             {
               path: "/page4",
               label: "报表筛选",
-              name: 'page4'
+              name: 'page4',
+              icon: "news"
             },
             {
               path: "/page5",
               label: "综合报表",
-              name: 'page5'
+              name: 'page5',
+              icon: 'document'
             }
           ]
         },
@@ -124,33 +119,38 @@ export default {
             {
               path: "/page1",
               label: "折线图",
-              name: 'page1'
+              name: 'page1',
+              icon: 'check'
             },
             {
               path: "/VideoView",
               label: "视频组件",
               name: 'VideoView', 
+              icon: 'view'
             },
             {
               path: "/CropperImage",
               label: "裁剪组件",
               name: 'CropperImage', 
-              icon: "edit-outline"
+              icon: "picture"
             },
             {
               path: "/Scroll",
               label: "无缝滚动",
               name: 'Scroll', 
+              icon: 'more-outline'
             },
             {
               path: "/404",
               label: "404页面",
-              name: 'notFound'
+              name: 'notFound',
+              icon: 'circle-close'
             },
             {
               path: "/table",
               label: "表格组件",
-              name: 'table'
+              name: 'table',
+              icon: 'document'
             }
           ]
         }

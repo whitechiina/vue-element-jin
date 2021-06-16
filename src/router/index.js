@@ -49,14 +49,6 @@ const routes = [{
         }
       },
       {
-        path: '/user',
-        name: 'user',
-        component: () => import('@/views/UserManage/UserManage.vue'),
-        meta: {
-          index: 5
-        }
-      },
-      {
         path: '/page1',
         name: 'page1',
         component: () => import('@/views/OtherManage/PageOne.vue'),
