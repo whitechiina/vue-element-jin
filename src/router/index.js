@@ -12,7 +12,9 @@ VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err);
 };
 
-const routes = [{
+const routes = [
+  {path:'/',redirect:'/home'},
+  {
     path: "/login",
     component: () => import('@/views/Login/index.vue'),
     hidden: true,
@@ -21,11 +23,17 @@ const routes = [{
       keepAlive: false // 不需要缓存
     }
   },
+  // 创建空页面刷新跳转
   {
-    path: '/',
+    path: '/redirect/:path*',
+    component: () => import('@/views/redirect'),
+    hidden: true
+  },
+  {
+    path: '/home',
     component: () => import('../layout/Main.vue'),
     children: [{
-        path: '/',
+        path: '/home',
         name: 'home',
         component: () => import('@/views/Index/Home.vue'),
         meta: {

@@ -39,6 +39,9 @@
           </el-dropdown-menu>
         </el-dropdown>
       </div>
+      <div class="refresh" @click="refresh">
+        <i class="el-icon-refresh"></i>
+      </div>
       <div class="full" @click="full">
         <i class="iconfont icon-quanping"></i>
       </div>
@@ -56,7 +59,6 @@
             <el-dropdown-item command="logout">退出</el-dropdown-item>
           </el-dropdown-menu>
         </el-dropdown>
-        <div class="username">[ 管理员 ]</div>
         <div class="userpic">
           <img src="https://nirongxu.github.io/vue-xuAdmin/dist/static/images/icon.jpg">
         </div>
@@ -94,6 +96,14 @@ export default {
     })
   },
   methods: {
+    // 刷新页面
+    refresh() {
+      const { fullPath } = this.$route
+    console.log(fullPath)
+      this.$router.replace({
+        path: '/redirect' + fullPath
+      })
+    },
     collapseMenu() {
       this.$store.commit('collapseMenu')
     },
@@ -188,18 +198,20 @@ export default {
       margin-right: 10px;
       cursor: pointer;
     }
+    .refresh {
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+      padding-right: 20px;
+    }
     .full {
+      font-size: 20px;
       cursor: pointer;
       padding-right: 10px;
     }
     .login {
       display: flex;
       align-items: center;
-      .username {
-        font-size: 14px;
-        color: #fff;
-        padding-right: 20px;
-      }
       .userpic {
         width: 40px;
         height: 40px;
