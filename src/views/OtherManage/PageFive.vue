@@ -1,13 +1,13 @@
 <template>
     <div class="main">
-        <LineTitle :title="title"></LineTitle>
+        <LineTitle :title="title" :subtitle="subtitle" @back="back"></LineTitle>
         <vxe-table
           border
           :cell-style="headerCellStyle"
           height="300"
           :data="tableData"
           @cell-click="headerCellClickEvent"
-          v-show="show">
+          v-if="show">
           <vxe-table-column field="name" title="矿名称"></vxe-table-column>
           <vxe-table-column field="id" title="矿编号"></vxe-table-column>
 
@@ -28,6 +28,10 @@
           <vxe-table-column field="leave" title="是否掉线"></vxe-table-column>
         </vxe-table>
 
+        <div v-if="!show">
+            测试表格
+        </div>
+
     </div>
 </template>
 
@@ -38,6 +42,7 @@ export default {
         return {
             show: true,
             title: '综合表格监控',
+            subtitle: '',
             tableData: [
                 { name: '澄合二矿', id: 'chengheerkuang', Mnumber: 26, Mwarning: 0, Mpower: 0, Mno: 0,  Snumber: 22, Swarning: 0, Spower: 0, Sno: 0, leave: "设备已离线"},
                 { name: '安里煤矿', id: 'anlimeikuang', Mnumber: 23, Mwarning: 0, Mpower: 0, Mno: 0,  Snumber: 18, Swarning: 0, Spower: 0, Sno: 0, leave: "设备已离线"},
@@ -49,8 +54,14 @@ export default {
         // 点击事件
         headerCellClickEvent ({ column }) {
             this.show = false
-            this.title +=  '>>>' + '测试'
+            // this.title +=  '>>>' + '测试'
+            this.subtitle = '测试'
             console.log(column)
+        },
+        
+        back () {
+            this.show = true;
+            this.subtitle = ''
         },
 
         // 筛选样式

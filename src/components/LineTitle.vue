@@ -2,7 +2,7 @@
 <template>
     <div class="header">
         <i></i>
-        <h1>{{title}}</h1>
+        <h1 @click="back">{{title}}</h1><h1 v-if="subtitle">>>>   {{subtitle}}</h1>
     </div>
 </template>
 
@@ -12,8 +12,17 @@ export default {
         title: {
             type: String,
             default: ''
+        },
+        subtitle: {
+            type: String,
+            default: ''
         }
-    }
+    },
+    methods: {
+        back() {
+            this.$emit('back')
+        }
+    },
 }
 </script>
 
@@ -37,6 +46,9 @@ export default {
             padding-left: 20px;
             left: -20px;
             margin: 0px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
         }
     }
 </style>
