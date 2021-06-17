@@ -20,6 +20,7 @@ echarts  可视化
 vxe-table  表格
 xgplayer  视频组件
 nprogress  进度条
+logicflow  流程图组件
 ```
 
 # 项目目录

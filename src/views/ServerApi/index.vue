@@ -18,10 +18,13 @@ export default {
       message: ""
     }
   },
+  mounted() {
+    this.getHomeApi()
+  },
   methods: {
     async getHomeApi() {
       const data = await getHomeApi()
-      this.message = data
+      this.message = Object.freeze(data)
     },
     async AbnormalCheckingIns() {
         await AbnormalCheckingIns({ cameraId: 123 })

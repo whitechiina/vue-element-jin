@@ -1,7 +1,7 @@
 const name = 'Vue-Element-Jin后台管理系统' // page title
 
 module.exports = {
-    //基本路径
+    // 基本路径
     publicPath: './', //默认的'/'是绝对路径，如果不确定在根路径，改成相对路径'./'
     // 输出文件目录
     outputDir: 'dist',  //打包的时候生成的一个文件名
@@ -9,7 +9,6 @@ module.exports = {
     indexPath: 'index.html',
     // 生产环境是否生成 sourceMap 文件
     productionSourceMap: false,
-
     chainWebpack: config => {
         config
         .plugin('html')
