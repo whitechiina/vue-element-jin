@@ -46,6 +46,10 @@ nprogress  进度条
 └── vue.config.js         webpac可选的配置文件
 ```
 
+# 模块/功能说明
+```
+```
+
 # 克隆项目
 ```
 git clone https://gitee.com/yao_wei_jin/Vue-Element-Jin
