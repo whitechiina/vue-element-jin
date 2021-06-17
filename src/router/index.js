@@ -121,9 +121,9 @@ const routes = [
         }
       },
       {
-        path: "/table",
-        name: 'table',
-        component: () => import('@/views/TableView/index.vue'),
+        path: "/flow",
+        name: 'flow',
+        component: () => import('@/views/FlowView/index.vue'),
         meta: {
           index: 14
         }

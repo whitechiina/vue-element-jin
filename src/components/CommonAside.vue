@@ -141,16 +141,16 @@ export default {
               icon: 'more-outline'
             },
             {
+              path: "/flow",
+              label: "流程编辑器",
+              name: 'flow',
+              icon: 'more'
+            },
+            {
               path: "/404",
               label: "404页面",
               name: 'notFound',
               icon: 'circle-close'
-            },
-            {
-              path: "/table",
-              label: "表格组件",
-              name: 'table',
-              icon: 'document'
             }
           ]
         }

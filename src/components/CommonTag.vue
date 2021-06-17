@@ -148,7 +148,7 @@ export default {
   padding-top: 8px;
   overflow: hidden;
   white-space: nowrap;
-  z-index: 9;
+  z-index: 999;
   .tag-item {
     width: 100%;
     height: 40px;

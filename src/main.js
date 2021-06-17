@@ -9,7 +9,6 @@ import '@/api/config'  //网络请求
 import "@/router/permission"  //路由守卫
 
 // 第三方库
-import 'default-passive-events'   //解决性能问题
 import ElementUI from 'element-ui'
 import VXETable from 'vxe-table'
 import VXETablePluginExportXLSX from 'vxe-table-plugin-export-xlsx'
