@@ -50,7 +50,7 @@ export default {
         let intViewportHeight = window.innerWidth - 64
         return intViewportHeight
       } else {
-        let intViewportHeight = window.innerWidth - 248
+        let intViewportHeight = window.innerWidth - 242
         return intViewportHeight
       }
     }

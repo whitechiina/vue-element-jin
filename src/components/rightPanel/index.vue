@@ -9,10 +9,10 @@
                 <i v-show="!show" class="iconfont icon-shezhi"></i>
             </div>
             <div class="custom-setting-item" v-show="show">
-                <CustomTitle></CustomTitle>
-                <CustomColor></CustomColor>
-                <CustomAside></CustomAside>
-                <CustomTag></CustomTag>
+                <div class="division"><CustomTitle></CustomTitle></div>
+                <div class="division"><CustomColor></CustomColor></div>
+                <div class="division"><CustomAside></CustomAside></div>
+                <div class="division"><CustomTag></CustomTag></div>
             </div>
         </div>
     </div>
@@ -105,6 +105,9 @@ export default {
                     color: rgba(0, 0, 0, .65);
                     font-size: 16px;
                     padding: 12px 0;
+                    .division {
+                        padding: 10px 0px;
+                    }
                 }
             }
         }

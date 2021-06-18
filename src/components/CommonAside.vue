@@ -8,7 +8,7 @@
     background-color="#393D49"
     text-color="#ccc"
     active-text-color="#fff">
-    <el-tabs v-model="activeName" @tab-click="handleClick">
+    <el-tabs v-model="activeName" :tab-position="tabPosition" @tab-click="handleClick">
       <el-tab-pane :label="isCollage? '安全' : '安全监控'" name="first">
         <el-menu-item :index="item.path + ''" v-for="item in noChildren" :key="item.path" @click="clickMenu(item)">
           <i :class="'el-icon-' + item.icon"></i>
@@ -62,6 +62,7 @@
 export default {
   data() {
     return {
+      tabPosition: 'bottom',
       activeName: "first",
       asideMenu: [
         {
@@ -347,7 +348,8 @@ export default {
 </script>
 
 <style lang="scss">
-.el-aside {
+.el-tabs__content {
+  height: calc(100vh - 112px);    //减去顶部和自身元素高度
   overflow: scroll;
 }
 

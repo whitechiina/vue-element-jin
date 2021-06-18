@@ -194,23 +194,48 @@ export default {
   .tools {
     display: flex;
     align-items: center;
+    height: 56px;
     .github {
       display: flex;
       align-items: center;
-      margin-right: 10px;
       cursor: pointer;
+      height: 56px;
+    }
+    .github:hover {
+      background-color: #005bc1;
     }
     .refresh {
       font-size: 20px;
       color: #fff;
       cursor: pointer;
-      padding-right: 20px;
+      padding: 0px 10px;
+      height: 56px;
+      line-height: 56px;
+    }
+    .refresh:hover {
+      background-color: #005bc1;
     }
     .full {
       font-size: 20px;
       cursor: pointer;
-      padding-right: 10px;
+      padding: 0px 10px;
+      line-height: 56px;
+      display: inline-block;
     }
+    .full:hover {
+      background-color: #005bc1;
+    }
+    .language:hover {
+      height: 56px;
+      line-height: 54px;
+      background-color: #005bc1;
+    }
+    .login:hover {
+      background-color: #005bc1;
+      height: 56px;
+      line-height: 56px;
+    }
+    
     .login {
       display: flex;
       align-items: center;
@@ -229,7 +254,8 @@ export default {
 h1 {
   color: #fff;
   font-size: 18px;
-  width: 240px;
+  width: 194px;
+  line-height: 56px;
   transition: background-color ease 0.3s;
   font-weight: 500;
   padding: 0px 10px;

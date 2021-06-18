@@ -29,8 +29,7 @@
     <!-- 数据展示 -->
     <el-dialog title="数据预览"
       :visible.sync="dialogVisible"
-      width="60%"
-      :before-close="handleClose">
+      width="60%">
       <json-viewer
       :value="treedata"
       :expand-depth=5

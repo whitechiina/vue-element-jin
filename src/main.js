@@ -16,7 +16,7 @@ import './plugin/progress'  //进度条
 
 // 全局配置
 import 'vxe-table/lib/style.css'
-import '@/assets/scss/reset.scss'
+import '@/assets/scss/style.scss'
 import 'xe-utils'
 import 'element-ui/lib/theme-chalk/index.css'
 

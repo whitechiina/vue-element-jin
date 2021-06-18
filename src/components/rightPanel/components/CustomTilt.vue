@@ -29,6 +29,9 @@ export default {
 <style lang="scss" scoped>
     .wrap {
         padding: 0px 20px;
+        h4 {
+            padding-bottom: 20px;
+        }
         .flex {
             display: flex;
             align-items: center;
