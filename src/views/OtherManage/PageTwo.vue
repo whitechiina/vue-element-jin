@@ -32,7 +32,7 @@
       <h1>监控设备故障记录报表</h1>
     </div>
 
-    <vxe-table border ref="xTable" height="530" :print-config="{}" :data="tableData">
+    <vxe-table border ref="xTable" height="530" :loading="loading" :print-config="{}" :data="tableData">
       <vxe-table-column type="checkbox" width="60"></vxe-table-column>
       <vxe-table-column type="seq" width="60"></vxe-table-column>
       <vxe-table-column field="name" title="Name"></vxe-table-column>
@@ -41,21 +41,19 @@
       <vxe-table-column field="address" title="Address"></vxe-table-column>
     </vxe-table>
 
-    <vxe-pager
-      align="left"
-      :current-page.sync="page1.currentPage"
-      :page-size.sync="page1.pageSize"
-      :total="page1.totalResult"
-    ></vxe-pager>
+    <common-pager :page="page" @getData="getData"></common-pager>
+
   </div>
 </template>
 
 <script>
+import CommonPager from '@/components/CommonPager.vue'
 import LineTitle from '@/components/LineTitle.vue'
 export default {
   data() {
     return {
       title: '监控设备故障记录报表',
+      loading: false,
       tableData: [
         {
           id: 10001,
@@ -148,7 +146,7 @@ export default {
           address: "vxe-table 从入门到放弃"
         }
       ],
-      page1: {
+      page: {
         currentPage: 1,
         pageSize: 10,
         totalResult: 200
@@ -180,6 +178,16 @@ export default {
     };
   },
   methods: {
+    getData(val) {
+      this.loading = true
+      setTimeout(()=> {
+        this.loading = false
+      },1000)
+      let frames = {}
+      frames.pageSize = val.pageSize;
+      frames.currentPage = val.currentPage
+      console.log(frames)
+    },
     printEvent1() {
       this.$refs.xTable.print({
         sheetName: "打印表格",
@@ -198,7 +206,8 @@ export default {
     }
   },
   components: {
-    LineTitle
+    LineTitle,
+    CommonPager
   }
 };
 
