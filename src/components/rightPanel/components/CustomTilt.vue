@@ -9,17 +9,20 @@
 </template>
 
 <script>
-import Cookies from "js-cookie"
+import { getCookie, setCookie,  clearCookie} from '@/utils'
 export default {
     data () {
         return {
             input: ''
         }
     },
+    mounted() {
+        this.input = getCookie('Title')
+    },
     methods: {
         sureSave() {
-            Cookies.remove("Title")
-            Cookies.set("Title", this.input)
+            clearCookie("Title")
+            setCookie("Title", this.input)
             this.$store.commit('editTitlr', this.input)
         }
     },

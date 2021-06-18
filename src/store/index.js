@@ -2,19 +2,19 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import tab from './tab'
 import color from './color'
-import Cookies from "js-cookie"
+import { setCookie, getCookie } from '@/utils'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    token: Cookies.get("token"),
-    projectitle: Cookies.get("Title")
+    token: getCookie("token"),
+    projectitle: getCookie("Title")
   },
   mutations: {
     setToken (state, token) {
       state.token = token
-      Cookies.set("token", token, { expires: 1 / 24 })
+      setCookie("token", token, { expires: 1 / 24 })
     },
     editTitlr(state, projectitle) {
       state.projectitle = projectitle

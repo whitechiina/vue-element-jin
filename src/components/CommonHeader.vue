@@ -68,7 +68,7 @@
 </template>
 
 <script>
-import Cookies from "js-cookie"
+import { clearCookie } from '@/utils'
 import screenfull from 'screenfull'
 import { mapState } from 'vuex'
 import UserInfo from "@/components/userForm/userInfo"
@@ -135,7 +135,7 @@ export default {
           this.passwordLog = true
           break;
         case 'logout':
-          Cookies.remove("token")
+          clearCookie("token")
           location.reload()  //强制刷新页面
           break;
       }

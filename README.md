@@ -15,7 +15,6 @@ vuex  状态管理
 axios  网络请求
 scss  css预处理器
 element-ui  UI库
-js-cookie  cookie控制
 echarts  可视化
 vxe-table  表格
 xgplayer  视频组件
