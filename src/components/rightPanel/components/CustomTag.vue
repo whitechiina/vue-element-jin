@@ -16,20 +16,21 @@
 
 <script>
 export default {
-    data() {
-        return {
-            tagflag: ''
-        }
-    },
     methods: {
         isCollage() {
             this.$store.commit('tagFlag')
         }
     },
     computed: {
-        flag() {
-            return this.$store.state.tab.tagFlag
-        }
+        tagflag: {
+            get () {
+                return this.$store.state.tab.tagFlag
+            },
+            set(){
+                return this.$store.state.tab.tagFlag
+            }
+        },
+        
     }
 }
 </script>

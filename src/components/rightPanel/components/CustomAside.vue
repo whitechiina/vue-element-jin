@@ -22,8 +22,13 @@ export default {
         }
     },
     computed: {
-        flag() {
-            return this.$store.state.tab.isCollapse
+        flag: {
+            get() {
+                return this.$store.state.tab.isCollapse
+            },
+            set() {
+                return this.$store.state.tab.isCollapse
+            }
         }
     }
 }
