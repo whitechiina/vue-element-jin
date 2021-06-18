@@ -107,10 +107,12 @@ export default {
     collapseMenu() {
       this.$store.commit('collapseMenu')
     },
-    userinfoCallback () {
+    userinfoCallback (Form) {
+      console.log(Form)
       this.userInfoLog = false
     },
-    passwordCallback () {
+    passwordCallback (Form) {
+      console.log(Form)
       this.passwordLog = false
     },
     full(){

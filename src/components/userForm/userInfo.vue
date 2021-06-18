@@ -28,7 +28,7 @@
                 <el-input v-model="Form.mobilePhone" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="submitForm('Form')">确 定</el-button>
+                <el-button type="primary" @click="submitForm('Form')">提 交</el-button>
                 <el-button @click="resetForm()">重 置</el-button>
             </el-form-item>
         </el-form>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { isPhone } from '@/utils/rules'
 export default {
     props: {
         title: {
@@ -66,21 +67,32 @@ export default {
                     { required: true, message: "请输入用户名", trigger: "blur" },
                     { min: 3, max: 18, message: "长度在 3 到 18 个字符", trigger: "blur" }
                 ],
-                roleId: [
-                    { required: true, message: "请选择用户角色", trigger: "change" }
+                mobilePhone: [
+                    { required: true, message: "请输入手机号", trigger: "blur" },
+                    { validator: isPhone, trigger: 'blur'}
                 ]
             }
         }
     },
     methods: {
-        closeCallback () {
-            this.$emit("userinfoCallback")
+        closeCallback() {
         },
-        submitForm(Form) {
-            console.log(Form)
+
+        // 提交
+        submitForm(formName) {
+            this.$refs[formName].validate((valid) => {
+            if (valid) {
+                this.$emit("userinfoCallback", this.Form)
+            } else {
+                console.log('error submit!!');
+                return false;
+            }
+            });
         },
-        resetForm() {
-            this.Form = {}
+
+        // 重置
+        resetForm(formName) {
+            this.$refs[formName].resetFields();
         }
     },
 }

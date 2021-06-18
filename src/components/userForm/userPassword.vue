@@ -13,7 +13,7 @@
                 <el-input type="password" v-model="Form.surepassword" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="submitForm(Form)">确 定</el-button>
+                <el-button type="primary" @click="submitForm('Form')">确 定</el-button>
                 <el-button @click="resetForm()">重 置</el-button>
             </el-form-item>
         </el-form>
@@ -67,7 +67,7 @@ export default {
             },
             rules: {
                 oldpassword: [
-                    {required: true, trigger: "blur"}
+                    {required: true, message: "请输入原密码", trigger: "blur"}
                 ],
                 password: [
                     {required: true, validator: validatePass, trigger: "blur"}
@@ -82,11 +82,22 @@ export default {
         closeCallback () {
             this.$emit("passwordCallback")
         },
-        submitForm(Form) {
-            console.log(Form)
+        
+        // 提交
+        submitForm(formName) {
+            this.$refs[formName].validate((valid) => {
+            if (valid) {
+                this.$emit("passwordCallback", this.Form)
+            } else {
+                console.log('error submit!!');
+                return false;
+            }
+            });
         },
-        resetForm() {
-            this.Form = {}
+
+        // 重置
+        resetForm(formName) {
+            this.$refs[formName].resetFields();
         }
     },
 }
