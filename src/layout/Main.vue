@@ -9,7 +9,7 @@
       </el-aside>
       <el-main class="content" :style="{ height: height + 'px' }">
         <common-tag></common-tag>
-        <div class="content-main">
+        <div class="content-main" :class="tagFlag? 'exist':''">
           <transition  
             mode="out-in"
             enter-active-class="animate__animated animate__fadeIn"
@@ -41,7 +41,8 @@ export default {
   },
   computed: {
     ...mapState({
-      color: state => state.color.color
+      color: state => state.color.color,
+      tagFlag: state => state.tab.tagFlag
     }),
     height() {
       const intViewportHeight = window.innerHeight - 56
@@ -72,5 +73,8 @@ export default {
     padding: 0px 20px;
     margin-top: 60px;
     /* 路由背景色 */
+  }
+  .exist {
+    margin-top: 20px !important;
   }
 </style>

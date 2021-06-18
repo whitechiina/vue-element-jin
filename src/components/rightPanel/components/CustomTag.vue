@@ -5,7 +5,7 @@
         </div>
         <div class="flex">
             <el-switch
-                v-model="flag"
+                v-model="tagflag"
                 active-color="#13ce66"
                 inactive-color="#ff4949"
                 @change="isCollage">
@@ -16,6 +16,11 @@
 
 <script>
 export default {
+    data() {
+        return {
+            tagflag: ''
+        }
+    },
     methods: {
         isCollage() {
             this.$store.commit('tagFlag')
