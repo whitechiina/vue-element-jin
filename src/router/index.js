@@ -36,97 +36,67 @@ const routes = [
         path: '/home',
         name: 'home',
         component: () => import('@/views/Index/Home.vue'),
-        meta: {
-          index: 1
-        }
+        meta: { title: '首页' }
       },
       {
         path: '/server',
         name: 'server',
         component: () => import('@/views/ServerApi/index.vue'),
-        meta: {
-          index: 2
-        }
-      },
-      {
-        path: '/hometwo',
-        name: 'hometwo',
-        component: () => import('@/views/HomeTwo/HomeTwo.vue'),
-        meta: {
-          index: 3
-        }
+        meta: { title: '网络请求' }
       },
       {
         path: '/page1',
         name: 'page1',
         component: () => import('@/views/OtherManage/PageOne.vue'),
-        meta: {
-          index: 6
-        }
+        meta: { title: '折线图' }
       },
       {
         path: '/page2',
         name: 'page2',
         component: () => import('@/views/OtherManage/PageTwo.vue'),
-        meta: {
-          index: 7
-        }
+        meta: { title: '报表打印' }
       },
       {
         path: '/page3',
         name: 'page3',
         component: () => import('@/views/OtherManage/PageThree.vue'),
-        meta: {
-          index: 8
-        }
+        meta: { title: '报表导出' }
       },
       {
         path: '/page4',
         name: 'page4',
         component: () => import('@/views/OtherManage/PageFour.vue'),
-        meta: {
-          index: 9
-        }
+        meta: { title: '报表筛选' }
       },
       {
         path: '/page5',
         name: 'page5',
         component: () => import('@/views/OtherManage/PageFive.vue'),
-        meta: {
-          index: 10
-        }
+        meta: { title: '综合报表' }
       },
       {
         path: '/VideoView',
         name: 'VideoView',
         component: () => import('@/views/VideoView/index.vue'),
-        meta: {
-          index: 11
-        }
+        meta: { title: '视频组件' }
       },
       {
         path: '/CropperImage',
         name: 'CropperImage',
         component: () => import('@/views/CropperImage/index.vue'),
-        meta: {
-          index: 12
-        }
+        meta: { title: '图片裁剪' }
       },
       {
         path: '/Scroll',
         name: 'Scroll',
         component: () => import('@/views/ScrollView/index.vue'),
-        meta: {
-          index: 13
-        }
+        meta: { index: 13, title: '无缝滚动' }
       },
       {
         path: "/flow",
         name: 'flow',
         component: () => import('@/views/FlowView/index.vue'),
-        meta: {
-          index: 14
-        }
+        meta: { title: '流程编辑器' }
       }
     ]
   },

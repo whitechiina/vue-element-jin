@@ -11,10 +11,18 @@ NProgress.configure({
     minimum: 0.3 // 初始化时的最小百分比
 })
 
+// 路由守卫
 router.beforeEach((to, from , next) => {
+    // 动态标题
+    if(to.meta.title){
+        document.title = to.meta.title + ' - 后台管理系统'
+    } else {
+        document.title = 'Vue-Element-Jin后台管理系统'
+    }
+
     // 每次切换页面时，调用进度条
     NProgress.start();
-    // 这个一定要加，没有next()页面不会跳转的。这部分还不清楚的去翻一下官网就明白了
+    // 这个一定要加，没有next()页面不会跳转的
     next();
 });
 
