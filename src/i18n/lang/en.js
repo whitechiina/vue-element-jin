@@ -4,8 +4,20 @@ const en = {
         home: "home",
         network: "network",
         user: "user",
+
         statement: "statement",
-        components: "components"
+        reportprinting: "reportprinting",
+        reportexport: "reportexport",
+        reportfiltrate: "reportfiltrate",
+        reportsynthesize: "reportsynthesize",
+        
+        components: "components",
+        linechart: "linechart",
+        video: "video",
+        tailor: "tailor",
+        roll: "roll",
+        flow: "flow",
+        notfound: "notfound"
     },
     ...enLocale //  合并element-ui内置翻译
 }

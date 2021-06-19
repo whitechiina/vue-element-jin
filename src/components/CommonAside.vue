@@ -27,7 +27,7 @@
               @click="clickMenu(subItem)"
             >
             <i :class="'el-icon-' + subItem.icon"></i>
-            {{subItem.label}}</el-menu-item>
+            {{ $t(`routeName.${subItem.label}`) }}</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-tab-pane>
@@ -86,25 +86,25 @@ export default {
           children: [
             {
               path: "/page2",
-              label: "报表打印",
+              label: "reportprinting",
               name: 'page2',
               icon: "printer"
             },
             {
               path: "/page3",
-              label: "报表导出",
+              label: "reportexport",
               name: 'page3',
               icon: "edit-outline"
             },
             {
               path: "/page4",
-              label: "报表筛选",
+              label: "reportfiltrate",
               name: 'page4',
               icon: "news"
             },
             {
               path: "/page5",
-              label: "综合报表",
+              label: "reportsynthesize",
               name: 'page5',
               icon: 'document'
             }
@@ -119,37 +119,37 @@ export default {
           children: [
             {
               path: "/page1",
-              label: "折线图",
+              label: "linechart",
               name: 'page1',
               icon: 'check'
             },
             {
               path: "/VideoView",
-              label: "视频组件",
+              label: "video",
               name: 'VideoView', 
               icon: 'view'
             },
             {
               path: "/CropperImage",
-              label: "裁剪组件",
+              label: "tailor",
               name: 'CropperImage', 
               icon: "picture"
             },
             {
               path: "/Scroll",
-              label: "无缝滚动",
+              label: "roll",
               name: 'Scroll', 
               icon: 'more-outline'
             },
             {
               path: "/flow",
-              label: "流程编辑器",
+              label: "flow",
               name: 'flow',
               icon: 'more'
             },
             {
               path: "/404",
-              label: "404页面",
+              label: "notfound",
               name: 'notFound',
               icon: 'circle-close'
             }
