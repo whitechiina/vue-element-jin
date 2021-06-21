@@ -15,7 +15,7 @@ NProgress.configure({
 router.beforeEach((to, from , next) => {
     // 动态标题
     if(to.meta.title){
-        document.title = to.meta.title + ' - 后台管理系统'
+        document.title = to.meta.title + ' - Vue Element Jin'
     } else {
         document.title = 'Vue-Element-Jin后台管理系统'
     }

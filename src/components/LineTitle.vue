@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import "@/assets/scss/handle.scss";
     .header {
         width: 100%;
         height: 52px;
@@ -38,7 +39,7 @@ export default {
         i {
             width: 10px;
             height: 100%;
-            background-color: #0066cc;
+            @include bg_color("background_color1");
         }
         h1 {
             font-size: 16px;

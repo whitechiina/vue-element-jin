@@ -1,0 +1,50 @@
+/**
+* 当HTML的data-theme为dark时，样式引用dark
+*  data-theme为其他值时，就采用组件库的默认样式
+*  这里我只定义了两套主题方案，想要再多只需在`$themes`里加就行了
+*  注意一点是，每套配色方案里的key可以自定义但必须一致，不然就会混乱
+*
+*  使用的话只需要在要改变样式的文件下添加下面两行即可: 
+*  @import "@/assets/scss/handle.scss";
+*  @include font_color("font_color1");
+*/
+
+$themes: (
+    // 热情红
+    red: (
+        font_color1: #F5222D,
+        border_color1: #F5222D,
+        background_color1: #F5222D,
+    ),
+
+    // 绿玉夏
+    green: (
+        //字体
+        font_color1: #42b983,
+        border_color1: #42b983,
+        background_color1: #42b983,
+    ),
+    
+    // 黄萧秋
+    orange: (
+        //字体
+        font_color1: #FAAD14,
+        border_color1: #FAAD14,
+        background_color1: #FAAD14,
+    ),
+    
+    // 天空蓝
+    blue: (
+        font_color1: #1890ff,
+        border_color1: #1890ff,
+        background_color1: #1890ff,
+    ),
+
+    // 魅惑紫
+    purple: (
+        font_color1: #722ed1,
+        border_color1: #722ed1,
+        background_color1: #722ed1,
+    )
+);
+

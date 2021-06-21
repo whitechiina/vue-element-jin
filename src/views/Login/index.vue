@@ -104,7 +104,7 @@ export default {
         // })
         // 将 username 设置为 token 存储在 store，仅为测试效果，实际存储 token 以后台返回为准
 
-          that.$store.dispatch("setToken", that.loginForm.username).then(() => {
+        that.$store.dispatch("setToken", that.loginForm.username).then(() => {
           that.$router.push({path: "/home"})
         }).catch(res => {
           that.$message({

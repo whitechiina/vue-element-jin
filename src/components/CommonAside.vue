@@ -348,6 +348,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/handle.scss";
 .el-tabs__content {
   height: calc(100vh - 112px);    //减去顶部和自身元素高度
 }
@@ -384,8 +385,8 @@ export default {
   width: 50%;
   padding: 0px;
   text-align: center;
-  background-color: #0066cc;
   color: #fff;
+  @include bg_color("background_color1");
 }
 
 .el-tabs__item .is-active {
@@ -410,7 +411,7 @@ export default {
 }
 
 .el-menu-item.is-active {
-   background-color: #0066cc !important;//你要修改的颜色
+  @include bg_color("background_color1");
 }
 
 .el-menu-item {

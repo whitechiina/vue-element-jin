@@ -75,6 +75,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/handle.scss";
   .header {
     margin-bottom: 20px;
     .main {
@@ -100,7 +101,7 @@ export default {
           color: rgba(0,0,0,.45);
           h5 {
             margin: 0 auto;
-            color: #666;
+            @include font_color("font_color1");
           }
         }
         .txt {
