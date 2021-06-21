@@ -351,8 +351,12 @@ export default {
 @import "@/assets/scss/handle.scss";
 .el-tabs__content {
   height: calc(100vh - 112px);    //减去顶部和自身元素高度
+  overflow: scroll;
+  
 }
-
+::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+  }
 .el-menu {
   height: 100%;
   border: none;
