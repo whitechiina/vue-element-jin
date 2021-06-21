@@ -17,14 +17,6 @@
     padding: 0px 0px 8px 0px!important;
 }
 
-.el-tag--plain .el-tag__close:hover {
-    background-color: red !important;
-}
-
-.el-tag--dark .el-tag__close:hover {
-    background-color: red !important;
-}
-
 .el-dropdown {
     padding: 0px 10px;
     cursor: pointer;
@@ -33,6 +25,7 @@
 
 .el-tag--dark {
     @include bg_color("background_color1");
+    @include border_color("border_color1");
 }
 
 .el-tag--plain {
