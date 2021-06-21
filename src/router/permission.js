@@ -6,9 +6,10 @@ import store from "../store"
 router.beforeEach((to, from, next) => {
     NProgress.start()
     // 判断token是否存在，否则返回登录页
-    const role = store.getters.token;
+    const role = store.getters['token/token'];
     if (!role && to.path !== '/login') {
         next('/login');
+        console.log('meiyou token')
     } else next()
 })
 

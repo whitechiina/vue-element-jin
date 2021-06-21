@@ -13,8 +13,8 @@ const mutations = {
 
 const actions = {
     setTokens ({commit}, token) {
-        console.log('执行了？')
         return new Promise((resolve) => {
+            console.log(token)
             commit("setToken", token)
             resolve()
         })
@@ -26,6 +26,7 @@ const getters = {
 }
 
 export default {
+    namespaced: true,//在这里控制  
     state,
     actions,
     getters,
