@@ -88,7 +88,7 @@ export default {
     ...mapState({
       current: state => state.tab.currentMenu,
       isCollapse: state => state.tab.isCollapse,
-      projectitle: state => state.projectitle
+      projectitle: state => state.title.projectitle
     })
   },
   methods: {
