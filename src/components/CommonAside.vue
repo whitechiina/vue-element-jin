@@ -350,7 +350,6 @@ export default {
 <style lang="scss">
 .el-tabs__content {
   height: calc(100vh - 112px);    //减去顶部和自身元素高度
-  overflow: scroll;
 }
 
 .el-menu {
