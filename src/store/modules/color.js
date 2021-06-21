@@ -1,6 +1,8 @@
+import { getCookie } from '@/utils'
+
 const state = {
     color: '#0066CC',
-    theme: 'blue'
+    theme: getCookie("THEME")
 }
 
 const mutations = {

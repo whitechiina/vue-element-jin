@@ -7,13 +7,14 @@
         v-for="(item, index) in themes" 
         :key="index" 
         :style="{ backgroundColor: item.color }"
-        @click="theme(item.color)"
+        @click="checktheme(item.color)"
         ></div>
     </div>
 </template>
 
 <script>
-import { setCookie, getCookie, clearCookie } from '@/utils/index'
+import { setCookie, clearCookie } from '@/utils/index'
+import { mapState } from 'vuex'
 export default {
     data () {
         return {
@@ -36,15 +37,32 @@ export default {
             ]
         }
     },
+    // created() {
+    //     const THEME = getCookie('THEME')
+    //     if (!THEME) {
+    //         // 没有存储默认选色
+    //         window.document.documentElement.setAttribute( "data-theme", 'blue' );
+    //     } else {
+    //         window.document.documentElement.setAttribute( "data-theme", THEME );
+    //     }
+    // },
     created() {
-        const THEME = getCookie('THEME')
-        window.document.documentElement.setAttribute( "data-theme", THEME );
+        if(!this.theme) {
+            window.document.documentElement.setAttribute( "data-theme", 'blue' )
+        } else {
+            window.document.documentElement.setAttribute( "data-theme", this.theme )
+        }
+    },
+    computed: {
+        ...mapState({
+            theme: state => state.color.theme
+        })
     },
     methods: {
-        theme(type) {
+        checktheme(type) {
             clearCookie('THEME')
             setCookie('THEME', type)
-            this.$store.commit('upDateTheme', {themeType: type});
+            this.$store.commit('upDateTheme', type);
             window.document.documentElement.setAttribute( "data-theme", type );
         }
     },

@@ -152,8 +152,6 @@ export default {
     background-position: center left;
     z-index: 9999;
     overflow: hidden;
-    .loginConbox{
-    }
     .logo{
       margin-left: 30px;
       width: 500px;

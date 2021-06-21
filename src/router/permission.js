@@ -9,7 +9,6 @@ router.beforeEach((to, from, next) => {
     const role = store.getters['token/token'];
     if (!role && to.path !== '/login') {
         next('/login');
-        console.log('meiyou token')
     } else next()
 })
 
