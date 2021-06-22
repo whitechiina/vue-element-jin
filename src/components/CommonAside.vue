@@ -419,12 +419,12 @@ export default {
 }
 
 .el-menu-item {
-  height: 55px !important;
-  line-height: 55px !important;
+  height: 47px !important;
+  line-height: 47px !important;
 }
 
 .el-submenu__title {
-  height: 55px !important;
-  line-height: 55px !important;
+  height: 47px !important;
+  line-height: 47px !important;
 }
 </style>
