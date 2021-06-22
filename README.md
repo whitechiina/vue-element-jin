@@ -2,24 +2,24 @@
 
 # 预览地址
 ```
-github国内: https://whitechiina.github.io/Vue-Element-Jin-/dist/#/
+github国外: https://whitechiina.github.io/Vue-Element-Jin-/dist/#/
 ```
 ![img](https://gitee.com/yao_wei_jin/Vue-Element-Jin/raw/master/src/assets/images/cover.png)
 
 # 技术栈
 ```
-ES6  Js
-vue-cil 4.5+  脚手架
-vue-router  路由管理
-vuex  状态管理
-axios  网络请求
-scss  css预处理器
-element-ui  UI库
-echarts  可视化
-vxe-table  表格
-xgplayer  视频组件
-nprogress  进度条
-logicflow  流程图组件
+ES6  
+vue-cil 4.5+  
+vue-router       路由管理
+vuex             状态管理
+axios            网络请求
+scss             css预处理器
+element-ui       UI库
+echarts          可视化
+vxe-table        表格组件
+xgplayer         视频组件
+nprogress        进度条
+logicflow        流程图组件
 ```
 
 # 项目目录
