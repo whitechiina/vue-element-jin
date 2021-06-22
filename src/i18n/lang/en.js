@@ -10,6 +10,7 @@ const en = {
         reportexport: "reportexport",
         reportfiltrate: "reportfiltrate",
         reportsynthesize: "reportsynthesize",
+        pdfpreview: "pdfpreview",
         
         components: "components",
         linechart: "linechart",

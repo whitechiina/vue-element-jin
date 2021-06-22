@@ -10,7 +10,8 @@ const cn = {
         reportexport: "报表导出",
         reportfiltrate: "报表筛选",
         reportsynthesize: "综合报表",
-
+        pdfpreview: "PDF预览",
+        
         components: "通用组件",
         linechart: "折线图",
         video: "视频组件",

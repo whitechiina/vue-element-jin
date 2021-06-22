@@ -8,15 +8,15 @@
       </div>
       <div class="export">
         <el-button type="primary" @click="exportDataEvent">导出</el-button>
-        <el-button type="primary" @click="print">打印</el-button>
+        <el-button type="primary" @click="print">打印PDF</el-button>
       </div>
     </div>
     <vxe-table
       border
       resizable
+      ref="xTable"
       show-overflow
       highlight-hover-row
-      ref="xTable"
       :export-config="{}"
       height="500"
       :data="tableData"
@@ -284,6 +284,7 @@ export default {
     exportDataEvent() {
       this.$refs.xTable.openExport({ types: ["xlsx"] });
     },
+    // 打印pdf
     print() {
       this.$refs.xTable.print({
         sheetName: "打印表格",

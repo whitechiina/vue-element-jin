@@ -75,6 +75,12 @@ const routes = [
         meta: { title: '综合报表' }
       },
       {
+        path: '/page6',
+        name: 'page6',
+        component: () => import('@/views/OtherManage/PagePdf.vue'),
+        meta: { title: 'PDF预览' }
+      },
+      {
         path: '/VideoView',
         name: 'VideoView',
         component: () => import('@/views/VideoView/index.vue'),

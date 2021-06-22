@@ -77,7 +77,7 @@ export default {
           name: 'server',
           icon: "loading"
         },
-        // 设置
+        // 报表管理
         {
           path: "/setting",
           label: "statement",
@@ -106,6 +106,12 @@ export default {
               path: "/page5",
               label: "reportsynthesize",
               name: 'page5',
+              icon: 'document'
+            },
+            {
+              path: "/page6",
+              label: "pdfpreview",
+              name: 'page6',
               icon: 'document'
             }
           ]

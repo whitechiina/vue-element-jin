@@ -30,6 +30,7 @@
           ref="xTable1"
           id="toolbar_demo5"
           height="400"
+          :export-config="{}"
           :custom-config="{storage: true, checkMethod: checkColumnMethod}"
           :data="tableData"
           @resizable-change="resizableChangeEvent">
@@ -96,6 +97,27 @@ export default {
         })
     },
     methods: {
+        // 导出
+        exportDataEvent() {
+            this.$refs.xTable1.openExport({ types: ["xlsx"] });
+        },
+        // 打印pdf
+        print() {
+            this.$refs.xTable1.print({
+                sheetName: "打印表格",
+                style: printStyle,
+                columns: [
+                { type: "seq" },
+                { field: "name" },
+                { field: "role" },
+                { field: "address" }
+                ],
+                beforePrintMethod: ({ content }) => {
+                // 拦截打印之前，返回自定义的 html 内容
+                return topHtml + content + bottomHtml;
+                }
+            });
+        },
         checkColumnMethod ({ column }) {
             if (column.property === 'role') {
             return true
@@ -116,6 +138,53 @@ export default {
         LineTitle
     }
 }
+
+// 打印样式
+const printStyle = `
+.title {
+    text-align: center;
+}
+.my-list-row {
+    display: inline-block;
+    width: 100%;
+}
+.my-list-col {
+    float: left;
+    width: 33.33%;
+    height: 28px;
+    line-height: 28px;
+}
+.my-top,
+.my-bottom {
+    font-size: 12px;
+}
+.my-top {
+    margin-bottom: 5px;
+}
+.my-bottom {
+    margin-top: 30px;
+    text-align: right;
+}
+`;
+// 打印顶部内容模板
+const topHtml = `
+<h1 class="title">监控设备故障记录报表</h1>
+<div class="my-top">
+    <div class="my-list-row">
+    <div class="my-list-col">起止时间:</div>
+    <div class="my-list-col">煤矿:</div>
+</div>
+`;
+// 打印底部内容模板
+const bottomHtml = `
+<div class="my-bottom">
+    <div class="my-list-row">
+    <div class="my-list-col"></div>
+    <div class="my-list-col"></div>
+    <div class="my-list-col">报表日期:</div>
+    </div>
+</div>
+`;
 </script>
 
 <style lang="scss" scoped>
